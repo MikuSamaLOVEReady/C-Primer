@@ -1,0 +1,3 @@
+C:/Users/di/Desktop/C++Learn/C-Primer/C++/Chapter2/cmake-build-debug/CMakeFiles/Chapter2.dir
+C:/Users/di/Desktop/C++Learn/C-Primer/C++/Chapter2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/di/Desktop/C++Learn/C-Primer/C++/Chapter2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
