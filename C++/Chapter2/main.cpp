@@ -117,11 +117,27 @@ int main() {
 
     //decltype();
 
+    std::string s1 = "ST T";
+    std::string s2 = s1;
+    std::cout << "ssss" <<s1.size() << std::endl;
+    std::cout <<  s1[3] << std::endl;
 
+    std::string spre , slater;
+    std::cin >> spre >> slater;
+    std::cout << spre << slater <<std::endl;
 
+    /*
+    std::string s3;
+    while(std::cin>>s3)
+      std::cout << s3  <<std::endl;
+    }
+     */
 
-
-
+    std::string line;
+    while(std::getline(std::cin,line))
+    {
+        std::cout << line  <<std::endl;
+    }
 
     return 0;
 }
