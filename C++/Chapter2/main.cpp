@@ -1,8 +1,14 @@
 #include <iostream>
+#include "chapter2.6.h"
+#include <string>
 
 //""
 std::string globe_str;
 int global_int; //“0”
+struct Foo
+{
+
+};
 
 int main() {
     std::cout << globe_str << std::endl;
@@ -29,7 +35,91 @@ int main() {
     r = &n;
     std::cout<< *p <<std::endl;
 
+    int i = 0;
+     for(i=0; i<=15 ; i++)
+     {
+         //find this tag in the list
+         if(i  == 7)
+             break;
+         std::cout <<   i <<std::endl;
+
+     }
+
     //p = &m;
+
+    const int value= 10;
+    const int &ref = value;
+    int const &arg = 123;
+
+    int va = 100;
+    const int &r1 = va; // 只要类型不同 int VS const int -- 都会创建一个临时
+    //int &r4 = r1 *2;
+
+
+    //类型可转换
+    double dval = 3.14;
+    const int &ri = dval;
+    //本质是创建了一个类型一致的零时变量
+    //const int temp = dval;
+    //ri = temp;
+
+    //常量ref 可以指向一个 非常量
+    int i3 = 325;
+    int &rr = i3;
+    const int &rl = i3;
+    //rl = 755;
+
+    //
+    double errnum = 3.14;
+    const double *dpt = &errnum; //dpt仿佛知道了这个区域是不可通过指针更改的，但其实所指区域不是const
+    //*dpt = 777;
+
+    const double corret = 55.2;
+    const double *dptt = &corret;
+
+    int min1 =-1;
+    const int i2 =min1;
+
+    int min2 = -3;
+    int const *pttt = & min1;
+    //*pttt = 333;
+
+
+    int *p1;
+    const int iic =15;
+    //int &mkx;
+    const int* const p3 = &iic;
+    //p1 = p3;
+
+    const int v2 =0 ;
+    int v1  = v2;
+    int &vv = v1;
+
+    constexpr int mf = 20;
+    constexpr int limt = mf+1;
+
+    constexpr int *q = nullptr; // 常量指针 不能指向别处
+    int null = 0 , *ppp = 0;
+
+    typedef double wages;    //wages 会被替换成double
+    typedef wages base,*pptt; //
+
+    /*
+    typedef char* pstring;  //pstring -> char pointer
+    const pstring cstr = 0; //这俩种是不同的，上面是常量ptr
+    const char* cstr2 = 0; //下面是指向常量的 ptr
+    const pstring *ps; // ps 指向另一个 ptr[data是常量
+    */
+
+    double mmkk = 234;
+    base value22 = 13;
+    pptt double_ptr = &mmkk;
+
+    //decltype();
+
+
+
+
 
 
 

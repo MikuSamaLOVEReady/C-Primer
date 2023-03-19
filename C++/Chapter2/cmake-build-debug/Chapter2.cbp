@@ -82,6 +82,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/di/Desktop/C++Learn/C-Primer/C++/Chapter2/chapter2.6.cpp">
+			<Option target="Chapter2"/>
+		</Unit>
+		<Unit filename="C:/Users/di/Desktop/C++Learn/C-Primer/C++/Chapter2/chapter2.6.h">
+			<Option target="Chapter2"/>
+		</Unit>
+		<Unit filename="C:/Users/di/Desktop/C++Learn/C-Primer/C++/Chapter2/file_1.cpp">
+			<Option target="Chapter2"/>
+		</Unit>
+		<Unit filename="C:/Users/di/Desktop/C++Learn/C-Primer/C++/Chapter2/file_1.h">
+			<Option target="Chapter2"/>
+		</Unit>
 		<Unit filename="C:/Users/di/Desktop/C++Learn/C-Primer/C++/Chapter2/main.cpp">
 			<Option target="Chapter2"/>
 		</Unit>
