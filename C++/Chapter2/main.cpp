@@ -4,6 +4,8 @@
 std::string globe_str;
 int global_int; //“0”
 
+//const int value;
+
 int main() {
     std::cout << globe_str << std::endl;
     std::cout << global_int << std::endl;
