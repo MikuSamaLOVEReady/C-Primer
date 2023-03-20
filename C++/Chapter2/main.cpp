@@ -123,8 +123,8 @@ int main() {
     std::cout <<  s1[3] << std::endl;
 
     std::string spre , slater;
-    std::cin >> spre >> slater;
-    std::cout << spre << slater <<std::endl;
+    //std::cin >> spre >> slater;
+    //std::cout << spre << slater <<std::endl;
 
     /*
     std::string s3;
@@ -133,11 +133,53 @@ int main() {
     }
      */
 
-    std::string line;
-    while(std::getline(std::cin,line))
-    {
-        std::cout << line  <<std::endl;
+    std::string sa= "Hello";
+    std::string sb = "Hiya";
+
+    if (sa < sb) {
+        std::cout << sa << " comes before " << sb << " in the dictionary." << std::endl;
+    } else {
+        std::cout << sa << " comes before " << sb << " in the dictionary." << std::endl;
     }
+
+    /*
+     * 一行一行都 ，包括空白符，
+        std::string line;
+        while(std::getline(std::cin,line))
+        {
+            std::cout << line  <<std::endl;
+        }
+     */
+
+    std::string com1;
+    std::string com2;
+
+    /*
+    while(std::cin >> com1 >> com2)
+    {
+        if(com1 == com2)
+        {
+            std::cout<<"Same"<<std::endl;
+            return 1;
+        }
+        else if( com1 >= com2 )
+        {
+            std::cout << com1 <<std::endl;
+        }
+        else{
+            std::cout<<com2 <<std::endl;
+        }
+    }
+    */
+
+    while (std::cin >> com1 >> com2 )
+    {
+        if(com1.size() ==com2.size())
+            std::cout<<"True" <<std::endl;
+        else
+            std::cout<<"Langer" << (com1.size() > com2.size())? com1 : com2;
+    }
+
 
     return 0;
 }
