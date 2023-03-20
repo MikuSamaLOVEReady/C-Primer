@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/di/Desktop/C++Learn/C-Primer/C++/Chapter2/chapter2.6.cpp" "CMakeFiles/Chapter2.dir/chapter2.6.cpp.obj" "gcc" "CMakeFiles/Chapter2.dir/chapter2.6.cpp.obj.d"
+  "C:/Users/di/Desktop/C++Learn/C-Primer/C++/Chapter2/file_1.cpp" "CMakeFiles/Chapter2.dir/file_1.cpp.obj" "gcc" "CMakeFiles/Chapter2.dir/file_1.cpp.obj.d"
   "C:/Users/di/Desktop/C++Learn/C-Primer/C++/Chapter2/main.cpp" "CMakeFiles/Chapter2.dir/main.cpp.obj" "gcc" "CMakeFiles/Chapter2.dir/main.cpp.obj.d"
   )
 

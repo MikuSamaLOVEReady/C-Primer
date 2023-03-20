@@ -128,6 +128,54 @@ Chapter2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Chapter2.dir\build.make CMakeFiles/Chapter2.dir/build
 .PHONY : Chapter2/fast
 
+chapter2.6.obj: chapter2.6.cpp.obj
+.PHONY : chapter2.6.obj
+
+# target to build an object file
+chapter2.6.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Chapter2.dir\build.make CMakeFiles/Chapter2.dir/chapter2.6.cpp.obj
+.PHONY : chapter2.6.cpp.obj
+
+chapter2.6.i: chapter2.6.cpp.i
+.PHONY : chapter2.6.i
+
+# target to preprocess a source file
+chapter2.6.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Chapter2.dir\build.make CMakeFiles/Chapter2.dir/chapter2.6.cpp.i
+.PHONY : chapter2.6.cpp.i
+
+chapter2.6.s: chapter2.6.cpp.s
+.PHONY : chapter2.6.s
+
+# target to generate assembly for a file
+chapter2.6.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Chapter2.dir\build.make CMakeFiles/Chapter2.dir/chapter2.6.cpp.s
+.PHONY : chapter2.6.cpp.s
+
+file_1.obj: file_1.cpp.obj
+.PHONY : file_1.obj
+
+# target to build an object file
+file_1.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Chapter2.dir\build.make CMakeFiles/Chapter2.dir/file_1.cpp.obj
+.PHONY : file_1.cpp.obj
+
+file_1.i: file_1.cpp.i
+.PHONY : file_1.i
+
+# target to preprocess a source file
+file_1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Chapter2.dir\build.make CMakeFiles/Chapter2.dir/file_1.cpp.i
+.PHONY : file_1.cpp.i
+
+file_1.s: file_1.cpp.s
+.PHONY : file_1.s
+
+# target to generate assembly for a file
+file_1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Chapter2.dir\build.make CMakeFiles/Chapter2.dir/file_1.cpp.s
+.PHONY : file_1.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -161,6 +209,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Chapter2
+	@echo ... chapter2.6.obj
+	@echo ... chapter2.6.i
+	@echo ... chapter2.6.s
+	@echo ... file_1.obj
+	@echo ... file_1.i
+	@echo ... file_1.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
