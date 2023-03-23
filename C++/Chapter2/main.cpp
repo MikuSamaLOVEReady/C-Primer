@@ -1,6 +1,8 @@
 #include <iostream>
 #include "chapter2.6.h"
+#include "file_1.h"
 #include <string>
+#include <vector>
 
 //""
 std::string globe_str;
@@ -11,6 +13,9 @@ struct Foo
 };
 
 int main() {
+    //用的是一个const值
+    std::cout << val <<std::endl;
+
     std::cout << globe_str << std::endl;
     std::cout << global_int << std::endl;
 
@@ -172,6 +177,7 @@ int main() {
     }
     */
 
+    /*
     while (std::cin >> com1 >> com2 )
     {
         if(com1.size() ==com2.size())
@@ -179,6 +185,19 @@ int main() {
         else
             std::cout<<"Langer" << (com1.size() > com2.size())? com1 : com2;
     }
+     */
+
+
+    int ival, *pavl;
+    //ival = pavl = 0; //不能给int 赋值pointer
+
+    if(ival = 1)
+    {
+        std::cout << "woc? " <<std::endl;
+    }
+
+    std::vector<std::string>::iterator  it;
+    ++*it;
 
 
     return 0;
