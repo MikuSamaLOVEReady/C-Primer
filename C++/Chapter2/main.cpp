@@ -201,6 +201,17 @@ int main() {
     std::vector<std::string>::iterator  it;
     //++*it;
 
+    int array[15];
+    std::vector<int> vec {1, 2, 3, 4, 5,6,7,8};
+
+    std::cout << sizeof(int) << std::endl;
+    std::cout << sizeof(float) << std::endl;
+    std::cout << sizeof(long) << std::endl;
+    std::cout << sizeof(double) << std::endl;
+    std::cout << sizeof(pavl) << std::endl;
+    std::cout << sizeof(array) << std::endl;
+    std::cout << sizeof(vec) << std::endl;
+
     int a = 55 , b = 70 , c =80 , d =90;
     int grade = b;
     std::string result = (grade > 90 ) ? "High pass"
