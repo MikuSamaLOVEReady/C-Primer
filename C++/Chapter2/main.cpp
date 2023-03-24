@@ -199,8 +199,18 @@ int main() {
     }
 
     std::vector<std::string>::iterator  it;
-    ++*it;
+    //++*it;
 
+    int a = 55 , b = 70 , c =80 , d =90;
+    int grade = b;
+    std::string result = (grade > 90 ) ? "High pass"
+                          : (grade > 75) ? "pass"
+                          : (grade > 60) ? "low pass" :"fail" ;
+    std::cout << result << std::endl;
+
+    unsigned char char1 = 0145;
+
+    1UL << 27;
 
     return 0;
 }
