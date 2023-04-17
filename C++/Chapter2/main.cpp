@@ -17,6 +17,7 @@ struct Foo
 
 //const int value;
 
+
 int main() {
     //用的是一个const值
     std::cout << val <<std::endl;
@@ -322,12 +323,16 @@ int main() {
     //funcs::print(arr2);
    // std::string s_c = "abc";
    // funcs::print(s_c.c_str());
-   int value_AA = 199;
-   int value_BB = 299;
+//   int value_AA = 199;
+//   int value_BB = 299;
    //funcs::swt_pointer()
-   int array22[2] = {1,2};
-   funcs::print(array22);
-
+//   int array22[2] = {1,2};
+//   funcs::print(array22);
+//    int arrr[10] = {1};
+//    funcs::printt(arrr);
+//    multi_array::foo(12,3413);
+     int va786  =  multi_array::null_return();
+     std::cout << va786 << std::endl;
 
     return 0;
 }

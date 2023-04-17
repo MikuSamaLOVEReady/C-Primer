@@ -110,6 +110,11 @@ namespace funcs{
 
     //pthread（C语言实现,没有ref）
 
+    void printt(const int ia[10]){
+        for(size_t i =0 ; i != 10 ;i++){
+            std::cout<< ia[i] << "ia[i]" << std::endl;
+        }
+    }
 
 
 

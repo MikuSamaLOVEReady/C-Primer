@@ -131,6 +131,32 @@ namespace multi_array{
     }
 
     //void
+    void error_mesg(std::initializer_list<std::string> i1){
+        for(auto begin = i1.begin() ; begin != i1.end()  ; ++begin){
+            std::cout << *begin <<std::endl;
+        }
+    }
+
+    int error_msg2(std::initializer_list<std::string> i2){
+        for( const std::string &str : i2){
+            std::cout << str <<std::endl;
+            return 1;
+        }
+    }
+
+    int null_return(){
+        int n = 5;
+        for(int i = 0 ; i<n  ;i++){
+            if(i == 15) return 1;
+        }
+    }
+
+    void foo(int cal , ...){
+
+    }
+
+
+
 
 
 
