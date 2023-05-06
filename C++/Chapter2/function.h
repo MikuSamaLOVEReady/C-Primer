@@ -53,7 +53,7 @@ namespace funcs{
 
     }
 
-    void fcn(const int i){} //只读 顶层const
+    void fcn(const int i){} //只读 顶层const 会被忽略
     //void fcn(int i){}
 
     bool is_empty(std::string &s){return s.empty();}
@@ -115,6 +115,133 @@ namespace funcs{
             std::cout<< ia[i] << "ia[i]" << std::endl;
         }
     }
+
+
+    //返回一个pointer，string(*)[10] , 指针指向数组头指针
+    std::string (*f(int i))[10] {
+
+    }
+
+    //返沪ref string(&)[10]
+    //传递的参数是数组
+    std::string (&f2(std::string (&str)[10])) [10]{
+
+    }
+
+    void testtt(const int* be){
+
+    }
+
+    //返回数组指针(指向数组的pointer)
+    int arr[] = {1,2,3};
+    //decltype(arr) *arrPtr(int i){}
+    //返回数组引用
+    //decltype(arr)& arrPtr2(int i){}
+
+    const std::string& shorterString(const std::string &s1 , const std::string &s2){
+
+    }
+
+    std::string& shorterString(std::string &s1, std::string &s2){
+            const std::string &r = shorterString( const_cast<const std::string&>(s1),
+                                            const_cast<const std::string&>(s2)
+                                           );
+            return const_cast<std::string&>(r);  //原本就是安全的
+    }
+
+    //int calc(int ,int ){};
+
+    void printtt(const std::string &){};
+    void printtt(double){};
+    //void printtt(int){};
+    void fooBar(int ival){
+        //void printtt(int);
+        //printtt("woc");
+    }
+
+    void default_fun(  int val , int i = 10 ){
+
+    }
+
+
+    // 这里报错是前面 width 和 height有默认值 而c没有
+    //int scrren(int width = 24 , int height = 48 , char c);
+    //int scrren(int width , int height , char c ='*');
+    //int scrren(int width , int height , char ='g');
+
+
+    //局部变量
+    int ht(){
+        return 10;
+    }
+
+    //
+
+
+    int wd = 80;
+    char def ='x';
+    int screentt(int sz = funcs::ht() , int = wd , char = def){
+        std::cout << sz << std::endl << wd ;
+    };
+
+    void f2(){
+        def = 'S';   //全局的可以改变
+        int wd = 25; //局部变量不能改变参数初始值
+        int ava = screentt(); //调用 screentt( ht() , 80 ,'S')
+    }
+
+    //
+    int ts(int ht , int wd=80 , char bckgrnd  = 'a'){
+
+    }
+
+    //constexpr fun 返回类型与参数必须是字面值
+    constexpr int new_sz(){ return  42; }
+
+    //实参是常量表达式的时候，返回值也是constexpr. 并不是给定了constexpr他返回就一定是。
+    constexpr size_t scale(size_t cbt ) {
+            return new_sz() * cbt;
+    }
+
+    void f1(){};
+    void f1(int ){};
+    void f1(int , int){};
+    void f1(double , double=3.14) {};
+
+    inline constexpr bool isShorter(const std::string &s1 , const std::string &s2){
+        return s1.size() < s2.size();
+    }
+
+    void printt(){
+    #ifndef NDEBUG
+        std::cerr << "Error: " << __FILE_NAME__ << " in function " << __func__ << std::endl;
+    #endif
+    }
+
+    void manip(long);
+    void manip(float);
+
+    void manip(int, int);
+    int calc(int & , int &);
+    int calc(const int& , const int& );
+
+    int calc(char* , char*);/**/
+    int calc(const char* , const char*);/**/
+    int calc( char *const ,  char *const);/**/
+
+    bool lengthCompare(const std::string& , const std::string &);
+    bool lengthCompare(const std::string& );
+
+    void passarray(int* arr){
+        //auto head = std::end(arr);
+        std::cout << *arr++ <<std::endl;
+    }
+
+
+
+
+
+
 
 
 

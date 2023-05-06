@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.24)
-project(Chapter2)
+project(Chapter7)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Chapter2 main.cpp file_1.cpp file_1.h chapter2.6.cpp chapter2.6.h string_chapter3.cpp string_chapter3.h multi_array.cpp multi_array.h function.cpp function.h)
+add_executable(Chapter7 main.cpp file_1.cpp file_1.h chapter2.6.cpp chapter2.6.h string_chapter3.cpp string_chapter3.h multi_array.cpp multi_array.h function.cpp function.h arrays.cpp arrays.h Chapter7/Sales_data.cpp Chapter7/Sales_data.h Chapter7/Screen.cpp Chapter7/Screen.h)

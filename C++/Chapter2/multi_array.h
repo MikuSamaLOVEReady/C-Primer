@@ -4,6 +4,9 @@
 
 #ifndef CHAPTER2_MULTI_ARRAY_H
 #define CHAPTER2_MULTI_ARRAY_H
+#include <iostream>
+#include <string>
+#include <stdarg.h>
 
 namespace multi_array{
 
@@ -151,9 +154,68 @@ namespace multi_array{
         }
     }
 
+    //h
     void foo(int cal , ...){
-
+        va_list  args;
+        va_start(args,cal);
     }
+
+    const std::string& mainp(){
+        std::string ret;
+        if(!ret.empty())
+            return ret;
+    }
+
+    const std::string& refturnRef(){
+        return "empth"; // 字面值会先转换成一个局部变量
+    }
+
+    //给非常量Ref赋值
+    char& get_val(std::string &str , std::string::size_type ix ){
+        return str[ix];
+    }
+
+    //
+    std::vector<std::string> proecess(){
+        return {10,"std"};
+    }
+
+    int factorial(int val){
+       if(val > 1) return factorial(val-1)*val; //val--则会导致无限迭代
+       // if(val != 0 ) return factorial(val-1)*val; //如果为负则不会停止递归
+        return 1;
+    }
+
+    bool str_subrange(const std::string &st1 , const std::string &st2)
+    {
+        if(st1.size() == st2.size())
+            return st1 == st2;
+        std::string::size_type size = ( st1.size() < st2.size() ) ? st1.size() : st2.size();
+
+        for(decltype(size) i = 0 ; i != size ; i++){
+            if(st1[i] != st2[i] ){
+                return false;
+            }
+        }
+        // compiler不检查这里
+    }
+
+    int& get(int *array , int index){
+        return array[index];
+    }
+
+    void print(std::vector<int>::const_iterator first, std::vector<int>::const_iterator last){
+        if( first != last ) {
+            std::cout << *first << std::endl;
+            print(++first,last);
+        }
+    }
+
+    auto funcc(int i) -> int(*)[10]{
+        int arr[10] = {0};
+        return &arr;
+    }
+
 
 
 
