@@ -6,6 +6,7 @@
 #include "string_chapter3.h"
 #include "multi_array.h"
 #include "function.h"
+#include "arrays.h"
 
 //""
 std::string globe_str;
@@ -331,8 +332,125 @@ int main() {
 //    int arrr[10] = {1};
 //    funcs::printt(arrr);
 //    multi_array::foo(12,3413);
-     int va786  =  multi_array::null_return();
-     std::cout << va786 << std::endl;
+//    int va786  =  multi_array::null_return();
+//     std::cout << va786 << std::endl;
+//    std::string s122 = "swoc";
+//    int vaa = 29;
+//    int vaa2 = 39;//multi_array::foo(vaa , s122);
+//    multi_array::get_val( s122, 0)  = 'K' ;
+//    std::vector<std::string > vecStr = multi_array::proecess();
+//    std::cout << vecStr.front() << std::endl;
+      int ia[10];
+      for(int i= 0; i != 10 ;i++){
+         // std::cout <<  multi_array::get(ia,i) << std::endl;
+         multi_array::get(ia,i) = i;     //给函数返回值赋值
+      }
+
+// vec {1, 2, 3, 4, 5,6,7,8};
+//     multi_array::print(vec.cbegin() , vec.cend());
+
+    //typedef int arrT[10] ;
+    using arrT =  int[10] ;  //以上两种别名方法等价
+    arrT myArray; // 等价于 int myArray[10];
+    arrT* func(int i); // 返回指针，指向一个长为10的int型数组
+
+    int arrnoAlise[10];
+    int* p1noAlise[10];
+    int (*p_noalise)[10] = &arrnoAlise; //pointer to pointer
+
+    int odd[] = {1,3,5,7,9};
+    int even[] = {0,2,4,6,8};
+
+   // decltype(odd) *ptr
+   std::string stt[10] = {};
+
+   //被当成数组
+   std::string (*strsdddd)[10] = nullptr;
+   std::string (&strrssRef)[10] = stt;
+   auto val = funcs::f(10);
+
+   int arrayyy[10] = {0};
+   //arrayyy
+   std::begin(arrayyy);
+
+   const char aatt = 'a';
+   const char* cp = &aatt;  //
+   char *pppt = const_cast<char*>(cp);
+   *pppt = 't';
+
+   //funcs::scrren(15);
+   //funcs::ts();
+   //funcs::ts(24,'*');
+
+    //constexpr int mffff = 20; //理解为const int
+    //mffff = 55;
+
+
+    //constexpr int a1333 =   funcs::scale(iii);
+    //int iii =  1;
+    //int vavva = funcs::scale(iii);
+    //int arrrr[vavva];
+    //assert(false);
+    //funcs::printt();
+
+    //std::string ssst;
+    //while(std::cin >> ssst && ssst != "woc"){};
+    //assert(std::cin); //总是有值的
+    //funcs::manip(3.14);
+    //double dobj;
+    //funcs::manip('a','z'); //类型提升 高于
+    //funcs::manip(55.4,dobj);// 算数类型转换
+    //funcs::f1(42, 2.56);
+    //std::begin(arrayyy);
+
+    //声明函数指针
+    //bool (*pf) (const std::string& , const std::string&);
+    //bool (*pf2) (const std::string&);
+    //pf2 = funcs::lengthCompare; // 这俩指向不同函数
+    //pf = &funcs::lengthCompare;
+
+    //pf("hello" ,"susu");
+    //(*pf)("wer","rerw");
+    //int arr[20] = {89,2,4};
+    //这里仍然是数组类型并没有退化成指针
+    //funcs::passarray(arr);
+    //auto heade = std::begin(arr);
+
+    //typedef decltype(lengthCompare) Func2;
+    //typedef bool Func(const std::string& , const std::string&);
+    //Func* fp  = funcs::lengthCompare;
+//    std::string::size_type (*ptrr)(std::string &s1 , std::string &s2) = getFunc("woc");
+//    auto funcPtr = getFunc("woc");
+//
+//    int (*funptrr)(int , int) = &intfunc;
+//    int (*funptrr2)(int , int) = &intfunc2;
+//    int (*funptrr3)(int , int) = &intfunc3;
+//    int (*funptrr4)(int , int) = &intfunc4;
+//
+//    std::vector< int (*)(int, int)> fpvec;
+//    fpvec.push_back(funptrr);
+//    fpvec.push_back(funptrr2);
+//    fpvec.push_back(funptrr3);
+//    fpvec.push_back(funptrr4);
+//
+//    for( auto it = fpvec.begin() ; it != fpvec.end() ; it++){
+//        std::cout << "___" <<(*it)(4, 2) << std::endl;
+//    }
+
+//    typedef bool (*FuncP) (const std::string& , const std::string&);
+    //typedef decltype(lengthCompare) *FuncP2;
+    //FuncP fptr = funcs::lengthCompare;
+
+   // const int valdd = 124;
+   // int *const cstptr = &valdd;
+
+    //const Sales_data sstae; //初始化一个OBJ
+    //sstae.tettt();
+    Person per1 , per2;
+    //read(std::cin , per1);
+    Sales_data sd("woc");
+    read(read(std::cin , per1), per2);
+    std::cout << "___" << std::endl;
 
     return 0;
 }
