@@ -3,4 +3,4 @@ project(offer)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(offer main.cpp offer-07.cpp offer-07.h offer-87.cpp offer-87.h offer-54.cpp offer-54.h offer-09.cpp offer-09.h offer-079.cpp offer-079.h)
+add_executable(offer main.cpp offer-07.cpp offer-07.h offer-87.cpp offer-87.h offer-54.cpp offer-54.h offer-09.cpp offer-09.h offer-079.cpp offer-079.h offer-11.cpp offer-11.h offer-012.cpp offer-012.h)
