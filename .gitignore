@@ -2,3 +2,6 @@ C++/Chapter2/cmake-build-debug
 multithread/cmake-build-debug
 .DS_Store
 multithread/.idea
+offer/.idea
+offer/cmake-build-debug
+C++/.idea
