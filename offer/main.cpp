@@ -5,6 +5,7 @@
 //#include "offer-21.h"
 #include "offer-27.h"
 #include "offer28.h"
+#include "offer-62.h"
 
 
 
@@ -16,7 +17,7 @@ int main() {
         if(t++>5)
             break;
         std::cout << t << std::endl;
-    }
+    }s
     MovingAverage* movingAverage = new MovingAverage(3);
 
     vector<int> nums = {};
@@ -36,6 +37,9 @@ int main() {
     node3->right = nullptr;
     node3->right = node5;
 
+    int val = lastRemaining(5,3);
+
+    vector<bool> iteNum(15);
     vector<int*> myvec;
     myvec.push_back(nullptr);
     bool result = isSymmetric(node);
