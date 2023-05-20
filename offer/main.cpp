@@ -1,4 +1,12 @@
 #include <iostream>
+#include "offer2-41.h"
+#include "offer-25.h"
+//#include "offer-26.h"
+//#include "offer-21.h"
+#include "offer-27.h"
+#include "offer28.h"
+#include "offer-62.h"
+
 #include "offer-079.h"
 #include "offer-14.h"
 #include "offer-15.h"
@@ -10,14 +18,49 @@
 
 
 int negateMinimumInt() {
-    long long int value = -2147483648LL;  // 使用 long long int 类型存储负数
-    int negatedValue = static_cast<int>(-value);  // 取反并转换回 int 类型
+    long long int value = -2147483648LL;  // 脢鹿脫脙 long long int 脌脿脨脥麓忙麓垄赂潞脢媒
+    int negatedValue = static_cast<int>(-value);  // 脠隆路麓虏垄脳陋禄禄禄脴 int 脌脿脨脥
     return negatedValue;
 }
 
 
 int main() {
 
+    /*
+    int t=0;
+    while(true){
+        if(t++>5)
+            break;
+        std::cout << t << std::endl;
+    }s
+    MovingAverage* movingAverage = new MovingAverage(3);
+
+    vector<int> nums = {};
+    exchange(nums);
+     */
+
+    //[1,2,2,null,3,null,3]
+    TreeNode* node = new TreeNode(1);
+    TreeNode* node2 = new TreeNode(2);
+    TreeNode* node3 = new TreeNode(2);
+    TreeNode* node4 = new TreeNode(3);
+    TreeNode* node5 = new TreeNode(3);
+    node->left = node2;
+    node->right = node3;
+    node2->left = nullptr;
+    node2->right = node4;
+    node3->right = nullptr;
+    node3->right = node5;
+
+    int val = lastRemaining(5,3);
+
+    vector<bool> iteNum(15);
+    vector<int*> myvec;
+    myvec.push_back(nullptr);
+    bool result = isSymmetric(node);
+    std::cout << "wic" << std::endl;
+    //std::cout << movingAverage->next(10)<< std::endl;
+    //std::cout << movingAverage->next(3) << std::endl;
    //std::cout <<  cuttingRope_DP(10) << std::endl;
    //std::cout <<  hammingWeight(4294967293) << std::endl;
    //std::cout <<  myPow(2.0,10) << std::endl;
@@ -42,6 +85,6 @@ int main() {
     reverseList2(head0);
 
     printNumbers2(3);
-    //-2^31 是整数的最小值，即 -2147483648，它可以在 int 类型中准确地表示。同样，2^31-1 是整数的最大值，即 2147483647
+    //-2^31 脢脟脮没脢媒碌脛脳卯脨隆脰碌拢卢录麓 -2147483648拢卢脣眉驴脡脪脭脭脷 int 脌脿脨脥脰脨脳录脠路碌脴卤铆脢戮隆拢脥卢脩霉拢卢2^31-1 脢脟脮没脢媒碌脛脳卯麓贸脰碌拢卢录麓 2147483647
     return 0;
 }
