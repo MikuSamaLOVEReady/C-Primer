@@ -38,6 +38,7 @@ int negateMinimumInt() {
 
 int main() {
 
+    std::vector<std::vector<int*>> vec1(10, std::vector<int*>(10, nullptr));
     /*
     int t=0;
     while(true){
