@@ -302,7 +302,7 @@ namespace strr{
     void _ptr_minus(){
         int arry[] = {} ;
         int *p1 = &arry[4];
-        int *p2 = arry;
+        int *p2 = arry;     //考前（高地址）- 靠后（低地址） = 表示要移动多少个距离才能找到
         std::cout << p2 - p1  <<std::endl; //预计=4
         p1 += p2 - p1; //p1指向 p2
         std::cout << *p1 <<std::endl; //预计=4

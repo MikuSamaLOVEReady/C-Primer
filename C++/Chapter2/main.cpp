@@ -1,5 +1,5 @@
 #include <iostream>
-#include "chapter2.6.h"
+//#include "chapter2.6.h"
 #include "file_1.h"
 #include <string>
 #include <vector>
@@ -7,6 +7,16 @@
 #include "multi_array.h"
 #include "function.h"
 #include "arrays.h"
+#include "effective/chapter-0.h"
+#include <unordered_set>
+#include <map>
+#include "Chapter11/associative-container.h"
+#include "Chapter7/Sales_data.h"
+#include "list"
+#include "Chapter11/pair.h"
+#include "Chapter7/defaule_vale.h"
+#include "Chapter7/Data.h"
+
 
 //""
 std::string globe_str;
@@ -289,14 +299,14 @@ int main() {
     //multi_array::iterator_2D_array();
     //multi_array::array_2D_poitner();
     //multi_array::print_array();
-    std::cout <<  funcs::first_0() << std::endl;
-    std::cout <<  funcs::first_0() << std::endl;
-    std::cout <<  funcs::first_0() << std::endl;
+    //std::cout <<  funcs::first_0() << std::endl;
+    //std::cout <<  funcs::first_0() << std::endl;
+    //std::cout <<  funcs::first_0() << std::endl;
     //funcs::first_0();
-//    int val_a = 10 , val_b = 9;
-//    funcs::swt( &val_a, &val_b);
-//    std::cout <<  val_a << val_b << std::endl;
-//    int vaa = 1000;
+    //int val_a = 10 , val_b = 9;
+    //funcs::swt( &val_a, &val_b);
+    //std::cout <<  val_a << val_b << std::endl;
+    //int vaa = 1000;
 //    funcs::reset(vaa);
 //    std::cout <<  vaa << std::endl;
 //    int vv2 = 10;
@@ -446,11 +456,90 @@ int main() {
 
     //const Sales_data sstae; //初始化一个OBJ
     //sstae.tettt();
-    Person per1 , per2;
+//    Person per1 , per2;
     //read(std::cin , per1);
-    Sales_data sd("woc");
-    read(read(std::cin , per1), per2);
-    std::cout << "___" << std::endl;
+    //Sales_data sd("woc");
+    //read(read(std::cin , per1), per2);
+    //std::cout << "___" << std::endl;
+
+    //B obj1;
+    //隐式转换，利用18->被自动调用了B-constructor构建了
+    //doSomething(18);
+    //Widget w1;
+    //Widget w3; //已经创建过了这个新对象
+    //这是一个新的对象 -- 一定有个构造函数被调用
+    //Widget w2 = w1;  //调用的是copy 构造而不是 operator =
+    //w3 = w1; // operator =
+    //char name[] = "Darla";
+
+    string s11 = "whatisyourname";
+    string s12 = "sssss";
+    std::unordered_set<char> unorder = {};
+
+
+    //不能插入相同的字符
+    for(string::iterator it = s12.begin() ; it<s12.end() ; ++it){
+        unorder.insert(*it);
+    }
+
+    //family();
+
+    // const int transValue = 10;
+    // int nonval = const_cast<int>(transValue);
+    // binary_search
+
+    //decltype获取一个函数的指针时候，记得在末尾增加*
+    multiset<Sales_data , decltype(compareIsbn)*> bookstroe();
+    multiset<Sales_data , bool (*)(const Sales_data &lhs , const Sales_data &rhs)>
+            bookstore(compareIsbn);
+
+    multimap<std::string , std::list<int>> mapp;
+    std::map<std::vector<int>::iterator , int> mv;
+    std::map<std::list<int>::iterator , int> ml;
+
+    //手动插入一个
+    std::vector<int> vi;
+    mv.insert(std::pair<std::vector<int>::iterator ,int>(vi.begin(),0));
+
+    //std::list<int> li;
+    //ml.insert(std::pair<std::list<int>::iterator , int>(li.begin() , 0));
+
+    //这个key值无法比较？？？？，list的iterator无法判定大小。
+    std::list<int> li;
+    //ml.insert(std::pair<std::list<int>::iterator, int>(li.begin(), 0));
+
+    int value1 =10 , value2 = 20;
+    std::string strtre = "worcnim";
+    std::pair<int, int> pl;
+    std::pair<int, int> ppps(value1 ,value2);
+    std::pair<int, int> ppps2(10 ,20);
+    std::cout<< (ppps==ppps2) << std::endl;
+
+
+
+    std::pair<int, int> pter = {value1, value2};
+    auto binal = std::make_pair(strtre,value1);
+
+    //creatPair();
+    map_iter();
+
+    //Miku mksama;
+    //vector<Miku> vecsdasf(10); //调用默认初始化
+    vector<C> vecttt(10); //调用默认初始化
+
+    Sales_data ate(); //直接初始化
+    string  mystr = "wochde";
+    Sales_data datadd = mystr; // 本质上也是自动构造了一个obj，再把它通过copy constructor。拷贝初始化
+    Sales_data datad("fasdfaf"); //
+
+    Data vall = {0,"Anna"}; //初始值顺序要与声明顺序一致
+
+    double rrd;
+    rrd = Account::rate();
+    Account cac;
+    ofstream out1, out2;
+    out1 = out2;
+
 
     return 0;
 }

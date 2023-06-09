@@ -3,5 +3,4 @@
 //
 
 
-#include "file_1.h"
 extern const int val = 15;
