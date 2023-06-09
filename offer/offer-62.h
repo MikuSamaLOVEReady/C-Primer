@@ -9,6 +9,12 @@
 using namespace std;
 //用一个vector?
 int lastRemaining(int n, int m) {
+
+    std::vector<std::vector<int>> vvv(10, std::vector<int>(10,0));
+
+    std::vector<std::vector<int*>> vec1(10, std::vector<int*>(10, nullptr));
+
+
     int initm = m;
     vector<bool> hasvisited(n);
     int count_true = 0; //每次取出一个元素，count_true++
