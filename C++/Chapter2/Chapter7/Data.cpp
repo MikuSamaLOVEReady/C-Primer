@@ -4,7 +4,16 @@
 
 #include "Data.h"
 
-//buyong
+//static 不用写出来
 void Account::rate(double value) {
     interestRate = value;
 }
+
+
+//
+double Account::initRate() {
+    return 12.0f;
+}
+double Account::interestRate =123;
+
+

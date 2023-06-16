@@ -17,13 +17,14 @@ public:
     void calculate(){ amount += amount * interestRate; }
     static double rate() {return interestRate;}
     static void rate(double);
+    static double interestRate; //所有对象只有这一个
 
 private:
     static constexpr int period = 30; //能给初始值的static变量，必须是 字面值类型且是constexpre
     double daily_tbl[period];
     std::string owner;
     double amount;
-    static double interestRate; //所有对象只有这一个
+    static double interestRate2;
     static double initRate();
     static Account ac1;
     Account *ac2;
@@ -37,7 +38,9 @@ public:
     static vector<double> vec; //不能给static 在类内初始化
 };
 
-vector<double> Example::vec(Example::vecSize);
+
+
+inline vector<double> Example::vec(Example::vecSize);
 
 
 #endif //CHAPTER7_DATA_H

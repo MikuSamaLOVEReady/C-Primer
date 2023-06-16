@@ -16,6 +16,7 @@
 #include "Chapter11/pair.h"
 #include "Chapter7/defaule_vale.h"
 #include "Chapter7/Data.h"
+#include <array>
 
 
 //""
@@ -291,7 +292,7 @@ int main() {
     //strr::_all_zero();
     //strr::_compareVector();
     //std::cout << (bool)strr::_compareVector() << std::endl;
-    //strr::c_str();
+    strr::c_str();
     //strr::c_stirng_char();
     //std::vector<int> ivec = {1,2,3,4};
     //strr::arry_copy(ivec);
@@ -537,8 +538,61 @@ int main() {
     double rrd;
     rrd = Account::rate();
     Account cac;
-    ofstream out1, out2;
-    out1 = out2;
+
+
+    std::array<int , 10> ial; //都不调用初始化的艹
+    auto vvvre = ial.size();
+    auto maxx_v = ial.max_size();
+    std::array<int , 4> ia3;
+    //ial = ia3;
+    std::array<int , 10> ia2 = {0,1,2,3,4}; //可以用赋值运算符，但不能有copy constructor
+    //swap(ia2 ,ia3); //
+    //std::arrayial(ia2);
+
+    std::vector<int> vector11;
+    std::vector<int> vector12(1);
+    std::vector<int> vector13(1,10);
+    std::vector<int> vectorlong{1,3,5,7,9,12};
+    std::vector<int> vectorshor{1,3,5};  // 前缀子序列
+    std::vector<int> vectorshor2{1,3,9}; // 不是前缀子序列
+    std::vector<int> vectorshor3{1,3,7,9,12}; // 不是前缀子序列
+
+
+
+
+
+    //std::vector<int> vector153 = {1,2,3};
+    //std::vector<int> vector15 = vector11; //
+    std::vector<int> vector15(vector11);
+    std::vector<int> vector16(vector11.begin(),vector11.end());
+    std::vector<int> vector17(ia2.begin(),ia2.end());
+
+
+    std::list<int> mylistt{1,2,3,4,5,6};
+    vector<double> myvec(mylistt.begin() , mylistt.end());
+    ial = ia2;
+    int digs[10] ={0,1,2,3,4,5};
+    //int cpy[10] = digs;
+
+    list<string> names{"woc","nima"};
+    vector<const char*> oldstyle{"lrd"};
+    //string->const char* 不存在隐式转换
+    //const char* -> string 可以，因为存在构造函数
+    //oldstyle.assign(names.begin(),names.end());
+    names.assign(oldstyle.begin(),oldstyle.end()); //和构造函数传递
+    //ial.swap()
+
+
+
+
+
+    vector<string> scev1(10);
+    vector<string> scev2(23);
+    swap(scev1,scev2);
+
+
+    //ofstream out1, out2;
+    //out1 = out2;
 
 
     return 0;
