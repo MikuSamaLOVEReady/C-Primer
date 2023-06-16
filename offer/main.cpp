@@ -26,6 +26,7 @@
 #include "04.h"
 #include "146.h"
 #include "2460.h"
+#include "15.h"
 
 
 
@@ -124,6 +125,9 @@ int main() {
     vector<int> vt1 ={1,2};
     vector<int> vt2 ={3,4};
 
+    vector<int>::iterator re = vt2.erase(vt2.begin()+1);
+    std::cout<< *re << std::endl;
+
     auto final_re = findMedianSortedArrays(vt1,vt2);
 
     //LRUCache* obj = new LRUCache(2);
@@ -136,6 +140,11 @@ int main() {
 
     vector<int> vvtt = {847,847,0,0,0,399,416,416,879,879,206,206,206,272};
     auto fianl = applyOperations(vvtt);
+
+    vector<int> testtt = {2,0,-2,-5,-5,-3,2,-4};
+    auto fianl2 = threeSum(testtt);
+
+
 
 
     printNumbers2(3);

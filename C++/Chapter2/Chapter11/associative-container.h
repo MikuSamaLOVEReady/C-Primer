@@ -5,6 +5,7 @@
 #ifndef CHAPTER7_ASSOCIATIVE_CONTAINER_H
 #define CHAPTER7_ASSOCIATIVE_CONTAINER_H
 
+#include <vector>
 #include <map>
 #include <set>
 #include <string>
