@@ -26,8 +26,6 @@
 #include "04.h"
 #include "146.h"
 #include "2460.h"
-#include "offer2/70.h"
-#include "59.h"
 #include "15.h"
 
 
@@ -127,6 +125,9 @@ int main() {
     vector<int> vt1 ={1,2};
     vector<int> vt2 ={3,4};
 
+    vector<int>::iterator re = vt2.erase(vt2.begin()+1);
+    std::cout<< *re << std::endl;
+
     auto final_re = findMedianSortedArrays(vt1,vt2);
 
     //LRUCache* obj = new LRUCache(2);
@@ -141,16 +142,11 @@ int main() {
     auto fianl = applyOperations(vvtt);
     std::cout << climbStairs(44) << std::endl;
 
-    auto result =generateMatrix(3);
+    vector<int> testtt = {2,0,-2,-5,-5,-3,2,-4};
+    auto fianl2 = threeSum(testtt);
 
-    vector<int> cur_ques{7,-10,7,3,14,3,-2,-15,7,-1,-7,6,-5,-1,3,-13,6,-15,-10,14,8,5,-10,-1,1,1,11,6,8,5,-4,0,3,10,-12,
-                         -6,-2,-6,-6,-10,8,-5,12,10,1,-8,4,-8,-8,2,-9,-15,14,-11,-1,-8,5,-13,14,-2,0,-13,14,-12,12,-13,
-                         -3,-13,-12,-2,-15,4,8,4,-1,-6,11,11,-7,-12,-2,-8,10,-3,-4,-6,4,-14,-12,-5,0,3,-3,-9,-2,-6,-15,2
-                         ,-11,-11,8,-11,8,-7,8,14,-5,4,10,3,-1,-15,10,-6,-11,13,-5,1,-15};
 
-    vector<int> cur_ques2{0,0,0};
-    auto my_resu = threeSum2(cur_ques2);
-    auto my_result = threeSum2(cur_ques);
+
 
     printNumbers2(3);
     //-2^31 ÊÇÕûÊýµÄ×îÐ¡Öµ£¬¼´ -2147483648£¬Ëü¿ÉÒÔÔÚ int ÀàÐÍÖÐ×¼È·µØ±íÊ¾¡£Í¬Ñù£¬2^31-1 ÊÇÕûÊýµÄ×î´óÖµ£¬¼´ 2147483647

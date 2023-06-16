@@ -1,14 +1,56 @@
 //
-// Created by 罗瑞笛 on 2023/6/12.
+// Created by di on 2023/6/15.
 //
 
 #ifndef OFFER_15_H
 #define OFFER_15_H
+
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+vector<vector<int>> threeSum(vector<int>& nums){
+    vector<vector<int>> result;
+    sort(nums.begin(),nums.end());
+    //脩隆脭帽
+    for(int i=0 ;  i<nums.size() && nums[i]<=0  ; ++i)
+    {
+        int front = i+1;
+        int end   = nums.size()-1;
+        //脛鲁脪禄脗脰陆谩脢酶脕脣
+        while(front<end){
+            //虏禄碌脠脫脷碌脛脢卤潞貌脠楼脰脴
+            while(  front< end && nums[front] + nums[end] + nums[i] > 0 ){
+                --end;
+                while(front <= end && nums[end] == nums[end+1]) --end;
+            }
+            while(  front< end && nums[front]+ nums[end] + nums[i] < 0 ){
+                ++front;
+                while(front <= end && nums[front] == nums[front-1]) ++front;
+            }
+
+            //脠莽鹿没潞贸脜脨露脧 拢卢 脠莽潞脦脠楼鲁媒脰脴赂麓拢驴
+            if( nums[front]+ nums[end] + nums[i] == 0  && front< end ){
+                vector<int> one = { nums[front], nums[end], nums[i] };
+                result.push_back(one);
+                ++front; --end;
+                //脪脝露炉 脟掳潞贸脰赂脮毛拢卢录脤脨酶脟卯戮隆脣霉脫脨脳茅潞脧
+                while (front< end && nums[end] == nums[end+1]) --end;
+                while (front< end && nums[front] == nums[front-1]) ++front;
+            }
+        }
+        //脜脨露脧脟掳潞贸 脢脟路帽 脪脩戮颅脢脟脪脩戮颅脮脪鹿媒碌脛脭陋脣脴 //pre_int
+        while( i+1<nums.size() && nums[i+1] == nums[i] ){
+            ++i;
+        }
+    }
+
+    return result;
 #include <vector>
 using namespace std;
 
-//找出所有可能的组合 ，即求C{n,x}
-// **********************太慢了**********************
+//脮脪鲁枚脣霉脫脨驴脡脛脺碌脛脳茅潞脧 拢卢录麓脟贸C{n,x}
+// **********************脤芦脗媒脕脣**********************
 vector<vector<int>> threeSum(vector<int>& nums) {
     //int index = 0;
     vector<vector<int>> result;
@@ -69,12 +111,12 @@ vector<vector<int>> threeSum2(vector<int>& nums){
                 } //left++;
             }
 
-            //按理来说一定会相等，会有不想等的情况吗？
+            //掳麓脌铆脌麓脣碌脪禄露篓禄谩脧脿碌脠拢卢禄谩脫脨虏禄脧毛碌脠碌脛脟茅驴枚脗冒拢驴
             if(copy[i] + copy[left] + copy[right] == 0 && left < right){
                 //result.push_back()
                 vector<int> temp = {copy[i] , copy[left] , copy[right]};
                 result.push_back(temp);
-                //一旦找到一组，则不可能再在这个范围内找到另一组
+                //脪禄碌漏脮脪碌陆脪禄脳茅拢卢脭貌虏禄驴脡脛脺脭脵脭脷脮芒赂枚路露脦搂脛脷脮脪碌陆脕铆脪禄脳茅
                 break;
             }
 
