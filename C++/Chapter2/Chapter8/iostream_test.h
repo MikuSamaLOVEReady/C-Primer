@@ -2,8 +2,8 @@
 // Created by ÂÞÈðµÑ on 2023/6/7.
 //
 
-#ifndef CHAPTER7_IOSTREAM_H
-#define CHAPTER7_IOSTREAM_H
+#ifndef CHAPTER7_IOSTREAM_TEST_H
+#define CHAPTER7_IOSTREAM_TEST_H
 #include <iostream>
 
 using namespace std;
@@ -22,4 +22,4 @@ istream& my_fun(istream& in){
 
 
 
-#endif //CHAPTER7_IOSTREAM_H
+#endif //CHAPTER7_IOSTREAM_TEST_H

@@ -535,10 +535,11 @@ int main() {
     Data vall = {0,"Anna"}; //初始值顺序要与声明顺序一致
 
     double rrd;
+    Account::rate(10.5f);
     rrd = Account::rate();
     Account cac;
-    ofstream out1, out2;
-    out1 = out2;
+    //ofstream out1, out2;
+    //out1 = out2;
 
 
     return 0;

@@ -208,13 +208,14 @@ namespace funcs{
     void f1(int , int){};
     void f1(double , double=3.14) {};
 
+    /*
     inline constexpr bool isShorter(const std::string &s1 , const std::string &s2){
         return s1.size() < s2.size();
-    }
+    }*/
 
     void printt(){
     #ifndef NDEBUG
-        std::cerr << "Error: " << __FILE_NAME__ << " in function " << __func__ << std::endl;
+        //std::cerr << "Error: " << __FILE_NAME__ << " in function " << __func__ << std::endl;
     #endif
     }
 

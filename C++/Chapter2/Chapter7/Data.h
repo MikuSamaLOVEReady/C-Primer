@@ -30,6 +30,7 @@ private:
     //Account ac3;
 };
 
+
 class Example{
 public:
     static constexpr double rate = 6.4;
@@ -37,7 +38,6 @@ public:
     static vector<double> vec; //不能给static 在类内初始化
 };
 
-vector<double> Example::vec(Example::vecSize);
 
 
 #endif //CHAPTER7_DATA_H
