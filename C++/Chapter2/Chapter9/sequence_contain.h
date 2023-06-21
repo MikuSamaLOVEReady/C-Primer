@@ -63,7 +63,6 @@ bool cmpvec(vector<int> &v1 , vector<int> &v2){
 }
 
 //bool
-
 bool cmpvecAlist (list<int> &v1 , vector<int> &v2){
     list v2_copy(v2.begin(),v2.end());
     return v1==v2_copy;

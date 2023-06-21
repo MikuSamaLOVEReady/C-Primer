@@ -3,6 +3,8 @@
 #include "file_1.h"
 #include <string>
 #include <vector>
+#include <deque>
+#include <forward_list>
 #include "string_chapter3.h"
 #include "multi_array.h"
 #include "function.h"
@@ -17,6 +19,9 @@
 #include "Chapter7/defaule_vale.h"
 #include "Chapter7/Data.h"
 #include <array>
+#include "Chapter9/empalce_vs_push.h"
+#include "Houjie/iterator_detail.h"
+
 
 
 //""
@@ -546,7 +551,7 @@ int main() {
     std::array<int , 4> ia3;
     //ial = ia3;
     std::array<int , 10> ia2 = {0,1,2,3,4}; //可以用赋值运算符，但不能有copy constructor
-    //swap(ia2 ,ia3); //
+    //swap(ia2 ,ia3);
     //std::arrayial(ia2);
 
     std::vector<int> vector11;
@@ -554,10 +559,13 @@ int main() {
     std::vector<int> vector13(1,10);
     std::vector<int> vectorlong{1,3,5,7,9,12};
     std::vector<int> vectorshor{1,3,5};  // 前缀子序列
+
+
     std::vector<int> vectorshor2{1,3,9}; // 不是前缀子序列
     std::vector<int> vectorshor3{1,3,7,9,12}; // 不是前缀子序列
-
-
+    auto it_v1 = vectorshor2.begin()+2;
+    auto it_v2  =vectorshor3.begin()+4;
+    swap(vectorshor2,vectorshor3); //已经交换过了，但并不是元素真的交换了，但iterator所指向内容不变。
 
 
 
@@ -583,16 +591,82 @@ int main() {
     //ial.swap()
 
 
-
-
-
     vector<string> scev1(10);
     vector<string> scev2(23);
-    swap(scev1,scev2);
+    swap(scev1,scev2); //swap不同size vector
+    std::string swap1 = "woc";
+    std::string swap2 = "luoruidi";
+    auto ite2 = swap2.begin();
+    swap(swap1,swap2);
+    std::cout << *ite2 << std::endl;
 
+    vector<string> v = {"aa" , "bb" , "cc", "dd"};
+    list<string> mysrrt;
+    auto new_it  = mysrrt.insert(mysrrt.begin(), v.begin() , v.end());
+    std::cout << *new_it <<std::endl;
+    auto new_it2 = mysrrt.insert(mysrrt.begin(), {"edw","cc"});
+    std::cout << *new_it2 <<std::endl;
+
+    vector<mytest> mycalss_contain;
+    //mycalss_contain.push_back(123, "woc");
+    mycalss_contain.emplace_back(1233,"woc");
+
+    //临时变量可以赋值给 const ref
+    // 可以延长该临时变量到
+    Sandbox sandbox(string("four"));
+    cout << "The answer is: " << sandbox.member << endl;
 
     //ofstream out1, out2;
     //out1 = out2;
+
+    std::deque<string> mydeque;
+    string ioinput;
+    /*
+    while(cin >> ioinput){
+        mydeque.push_back(ioinput);
+    }
+
+    for(auto val : mydeque){
+        std::cout << val << std::endl;
+    }*/
+
+
+    fuc_9_20();
+    fuc_9_21();
+    //fuc_9_22();
+    fuc_9_26();
+
+    vector<int> myvv = {1,2,3,4,5};
+
+    auto it_erase = myvv.begin()+2;
+    auto it_2 = myvv.begin()+3;
+    auto it_emd = myvv.end();
+
+    int& reff = myvv.front();
+    auto& first = myvv.at(0);
+    reff = 15;
+    myvv.erase(it_emd , it_emd);
+    std::cout << *it_2 << std::endl;
+
+    //头插链表
+    forward_list<int> fw;
+    fw.push_front(1);
+    fw.push_front(2);
+
+
+    deque<int> deqq = {1,2,3,4};
+    int& ref1 = deqq[2];
+    auto deq_it = deqq.begin()+1;
+    //deqq.insert(deqq.begin(),10);
+    deqq.push_front(10);
+    std::cout << "REF" <<ref1 << "ite"  <<*deq_it << std::endl;
+
+    std::cout << typeid(deqq).name()  << std::endl; //编译器会改变obj的名字
+
+
+
+
+
 
 
     return 0;

@@ -9,80 +9,77 @@
 #include <algorithm>
 
 using namespace std;
-vector<vector<int>> threeSum(vector<int>& nums){
+vector<vector<int>> threeSum(vector<int>& nums) {
     vector<vector<int>> result;
-    sort(nums.begin(),nums.end());
+    sort(nums.begin(), nums.end());
     //Ñ¡Ôñ
-    for(int i=0 ;  i<nums.size() && nums[i]<=0  ; ++i)
-    {
-        int front = i+1;
-        int end   = nums.size()-1;
+    for (int i = 0; i < nums.size() && nums[i] <= 0; ++i) {
+        int front = i + 1;
+        int end = nums.size() - 1;
         //Ä³Ò»ÂÖ½áÊøÁË
-        while(front<end){
+        while (front < end) {
             //²»µÈÓÚµÄÊ±ºòÈ¥ÖØ
-            while(  front< end && nums[front] + nums[end] + nums[i] > 0 ){
+            while (front < end && nums[front] + nums[end] + nums[i] > 0) {
                 --end;
-                while(front <= end && nums[end] == nums[end+1]) --end;
+                while (front <= end && nums[end] == nums[end + 1]) --end;
             }
-            while(  front< end && nums[front]+ nums[end] + nums[i] < 0 ){
+            while (front < end && nums[front] + nums[end] + nums[i] < 0) {
                 ++front;
-                while(front <= end && nums[front] == nums[front-1]) ++front;
+                while (front <= end && nums[front] == nums[front - 1]) ++front;
             }
 
             //Èç¹ûºóÅÐ¶Ï £¬ ÈçºÎÈ¥³ýÖØ¸´£¿
-            if( nums[front]+ nums[end] + nums[i] == 0  && front< end ){
-                vector<int> one = { nums[front], nums[end], nums[i] };
+            if (nums[front] + nums[end] + nums[i] == 0 && front < end) {
+                vector<int> one = {nums[front], nums[end], nums[i]};
                 result.push_back(one);
-                ++front; --end;
+                ++front;
+                --end;
                 //ÒÆ¶¯ Ç°ºóÖ¸Õë£¬¼ÌÐøÇî¾¡ËùÓÐ×éºÏ
-                while (front< end && nums[end] == nums[end+1]) --end;
-                while (front< end && nums[front] == nums[front-1]) ++front;
+                while (front < end && nums[end] == nums[end + 1]) --end;
+                while (front < end && nums[front] == nums[front - 1]) ++front;
             }
         }
         //ÅÐ¶ÏÇ°ºó ÊÇ·ñ ÒÑ¾­ÊÇÒÑ¾­ÕÒ¹ýµÄÔªËØ //pre_int
-        while( i+1<nums.size() && nums[i+1] == nums[i] ){
+        while (i + 1 < nums.size() && nums[i + 1] == nums[i]) {
             ++i;
         }
     }
 
     return result;
-#include <vector>
-using namespace std;
+}
 
 //ÕÒ³öËùÓÐ¿ÉÄÜµÄ×éºÏ £¬¼´ÇóC{n,x}
 // **********************Ì«ÂýÁË**********************
-vector<vector<int>> threeSum(vector<int>& nums) {
-    //int index = 0;
-    vector<vector<int>> result;
-    if(nums.size() <3 ) return result;
-    for(int i = 0 ; i<nums.size() ;++i ){
-        for(int j = i+1 ;j<nums.size() ; ++j){
-            for( int k = j+1 ; k<nums.size() ; ++k ){
-                if(nums[i] + nums[j] + nums[k] == 0){
-                    bool alreadyin = false;
-                    vector<int> temp;
-                    temp.push_back(nums[i]);
-                    temp.push_back(nums[j]);
-                    temp.push_back(nums[k]);
-                    std::sort(temp.begin(), temp.end());
-                    for(auto pre: result){
-                        if(pre == temp) {
-                            alreadyin = true;
-                            break;
+vector<vector<int>> threeSum2(vector<int>& nums) {
+        //int index = 0;
+        vector<vector<int>> result;
+        if(nums.size() <3 ) return result;
+        for(int i = 0 ; i<nums.size() ;++i ){
+            for(int j = i+1 ;j<nums.size() ; ++j){
+                for( int k = j+1 ; k<nums.size() ; ++k ){
+                    if(nums[i] + nums[j] + nums[k] == 0){
+                        bool alreadyin = false;
+                        vector<int> temp;
+                        temp.push_back(nums[i]);
+                        temp.push_back(nums[j]);
+                        temp.push_back(nums[k]);
+                        std::sort(temp.begin(), temp.end());
+                        for(auto pre: result){
+                            if(pre == temp) {
+                                alreadyin = true;
+                                break;
+                            }
                         }
+                        if(alreadyin) continue;
+                        else result.push_back(temp);
                     }
-                    if(alreadyin) continue;
-                    else result.push_back(temp);
                 }
             }
         }
+        return result;
     }
-    return result;
-}
 
-
-
-vector<vector<int>> threeSum2(vector<int>& nums){
+vector<vector<int>> threeSum3(vector<int>& nums){
     vector<vector<int>> result;
     vector<int> copy(nums);
     std::sort(copy.begin(), copy.end());
@@ -125,5 +122,6 @@ vector<vector<int>> threeSum2(vector<int>& nums){
     return result;
 
 }
+
 
 #endif //OFFER_15_H
