@@ -350,6 +350,8 @@ namespace strr{
         std::cout << strlen(ca) <<"lenth" << std::endl;
 
         const char a[] = {'h', 'e', 'l', 'l' ,'o'}; //Ã»ÓĞ'\0'½áÎ²
+        string str1 = a;
+        str1[0] = 'd';
         const char *cp = a;
         while(*cp){
             std::cout << *cp << std::endl;

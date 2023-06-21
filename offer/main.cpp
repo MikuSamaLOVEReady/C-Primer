@@ -140,6 +140,7 @@ int main() {
 
     vector<int> vvtt = {847,847,0,0,0,399,416,416,879,879,206,206,206,272};
     auto fianl = applyOperations(vvtt);
+    //std::cout << climbStairs(44) << std::endl;
 
     vector<int> testtt = {2,0,-2,-5,-5,-3,2,-4};
     auto fianl2 = threeSum(testtt);

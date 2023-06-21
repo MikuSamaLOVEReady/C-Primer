@@ -1,10 +1,10 @@
 //
-// Created by ÂÞÈðµÑ on 2023/6/7.
+// Created by ï¿½ï¿½ï¿½ï¿½ï¿½ on 2023/6/7.
 //
 
 #include "Data.h"
 
-//È«¾Ö¶¨Òå Ò»´Î
+//È«ï¿½Ö¶ï¿½ï¿½ï¿½ Ò»ï¿½ï¿½
 void Account::rate(double value) {
     interestRate = value;
 }
