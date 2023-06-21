@@ -16,6 +16,8 @@
 #include "Chapter11/pair.h"
 #include "Chapter7/defaule_vale.h"
 #include "Chapter7/Data.h"
+#include "Chapter9/forward_list.h"
+#include "Chapter9/resize_fun.h"
 
 
 //""
@@ -540,6 +542,17 @@ int main() {
     Account cac;
     //ofstream out1, out2;
     //out1 = out2;
+
+    forward_list<int> flst = {1,2,3,4,5,6,7};
+    func_9_27(flst);
+
+    forward_list<string> stringf = {"woc","MIKU","wod"};
+    func_9_28(stringf,"ddd","sama");
+    func_test();
+    func_invalid_vec();
+
+
+    std::cout << "woc" << std::endl;
 
 
     return 0;

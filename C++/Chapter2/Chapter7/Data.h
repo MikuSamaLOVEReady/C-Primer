@@ -31,6 +31,7 @@ private:
 };
 
 
+
 class Example{
 public:
     static constexpr double rate = 6.4;
