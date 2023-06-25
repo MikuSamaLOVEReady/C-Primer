@@ -21,6 +21,7 @@
 #include <array>
 #include "Chapter9/empalce_vs_push.h"
 #include "Houjie/iterator_detail.h"
+#include "Chapter9/Adapter.h"
 
 #include "Chapter9/forward_list.h"
 #include "Chapter9/resize_fun.h"
@@ -669,6 +670,21 @@ int main() {
     std::cout << "REF" <<ref1 << "ite"  <<*deq_it << std::endl;
 
     std::cout << typeid(deqq).name()  << std::endl; //编译器会改变obj的名字
+    //fun_9_32();
+    //fun_9_33();
+    //fun_9_34();
+    //fun_9_35();
+    fun_9_41();
+    string_erasetest();
+    string_insert();
+    string s{ "To drive tho thou is a foolish, tho courageous act." };
+    //string_insertAndErase_index(s, "tho", "though");
+    std::cout << s <<std::endl;
+    string sstt = "name";
+    auto resu = fun_9_45(sstt, "forn" ,"end");
+    auto resu2 = fun_9_46(sstt, "forn" ,"end");
+    find_str();
+    fun_9_47();
 
 
 
