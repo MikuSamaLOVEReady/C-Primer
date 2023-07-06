@@ -25,6 +25,7 @@
 
 #include "Chapter9/forward_list.h"
 #include "Chapter9/resize_fun.h"
+#include "Chapter15/base_and_derive.h"
 
 
 //""
@@ -687,9 +688,6 @@ int main() {
     fun_9_47();
 
 
-
-
-
     //ofstream out1, out2;
     //out1 = out2;
 
@@ -704,6 +702,10 @@ int main() {
     func_invalid_deque();
     //func_donot_saveend(); //没有更新 end
     fuc_9_31();
+
+    //
+    //base_derive* baseclass = new Bulk_quote2();  //Cannot cast 'Bulk_quote2' to its private base class 'base_derive'
+    Quote* quteclass = new Bulk_quote2();
 
 
     return 0;
