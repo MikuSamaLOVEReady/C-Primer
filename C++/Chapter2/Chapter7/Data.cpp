@@ -1,19 +1,18 @@
 //
-// Created by ÂÞÈðµÑ on 2023/6/7.
+// Created by ï¿½ï¿½ï¿½ï¿½ï¿½ on 2023/6/7.
 //
 
 #include "Data.h"
 
-//static ²»ÓÃÐ´³öÀ´
+//È«ï¿½Ö¶ï¿½ï¿½ï¿½ Ò»ï¿½ï¿½
 void Account::rate(double value) {
     interestRate = value;
 }
+vector<double> Example::vec(Example::vecSize);
 
-
-//
-double Account::initRate() {
-    return 12.0f;
+double Account::initRate(){
+    interestRate = 10.0f;
 }
-double Account::interestRate =123;
 
+double Account::interestRate = initRate();
 

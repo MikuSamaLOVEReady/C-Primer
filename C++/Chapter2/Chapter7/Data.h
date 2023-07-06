@@ -1,5 +1,5 @@
 //
-// Created by ÂÞÈðµÑ on 2023/6/6.
+// Created by ï¿½ï¿½ï¿½ï¿½ï¿½ on 2023/6/6.
 //
 
 #ifndef CHAPTER7_DATA_H
@@ -17,10 +17,10 @@ public:
     void calculate(){ amount += amount * interestRate; }
     static double rate() {return interestRate;}
     static void rate(double);
-    static double interestRate; //ËùÓÐ¶ÔÏóÖ»ÓÐÕâÒ»¸ö
+    static double interestRate; //ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 
 private:
-    static constexpr int period = 30; //ÄÜ¸ø³õÊ¼ÖµµÄstatic±äÁ¿£¬±ØÐëÊÇ ×ÖÃæÖµÀàÐÍÇÒÊÇconstexpre
+    static constexpr int period = 30; //ï¿½Ü¸ï¿½ï¿½ï¿½Ê¼Öµï¿½ï¿½staticï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½constexpre
     double daily_tbl[period];
     std::string owner;
     double amount;
@@ -31,16 +31,15 @@ private:
     //Account ac3;
 };
 
+
+
 class Example{
 public:
     static constexpr double rate = 6.4;
     static const int vecSize = 20;
-    static vector<double> vec; //²»ÄÜ¸østatic ÔÚÀàÄÚ³õÊ¼»¯
+    static vector<double> vec; //ï¿½ï¿½ï¿½Ü¸ï¿½static ï¿½ï¿½ï¿½ï¿½ï¿½Ú³ï¿½Ê¼ï¿½ï¿½
 };
 
-
-
-inline vector<double> Example::vec(Example::vecSize);
 
 
 #endif //CHAPTER7_DATA_H

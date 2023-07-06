@@ -84,6 +84,7 @@ private:
 
 };
 
+// hash_List Answer --> hash提供快速查找，list提供有序存放
 class LRUCache_HashList {
     //
     LRUCache_HashList(int capacity): capacity(capacity) {
@@ -104,7 +105,7 @@ class LRUCache_HashList {
       return hashmap[key]->second;
     }
 
-    //
+
     void put(int key, int value) {
         //不再buffer中
         if(hashmap.find(key) == hashmap.end()){
@@ -128,6 +129,57 @@ private:
     int capacity;
     map<int, list<pair<int, int>>::iterator> hashmap;   //同样也只维护目前在buffer中的元素
     list<pair<int, int>> cache; //用于维护最新与最久key
+
+};
+
+class LRUCache_HL_2{
+    LRUCache_HL_2(unsigned int capacity):capacity(capacity){
+    }
+
+    //查找
+    int get(int key){
+            //如果找到该元素
+            if(hash.find(key) != hash.end() ){
+                //把访问节点从队列中提到最前面
+                pair<int, int> exist_pair = *(hash.find(key)->second); //等价于 hash[key] 一个
+                queue.push_front(exist_pair);
+                //删除原位置节点
+                queue.erase( hash.find(key)->second);
+                hash[key] = queue.begin(); //链接到
+                return hash.find(key)->second->second;
+            }
+            else{
+                return -1;
+            }
+    }
+
+    void put(int key , int value){
+        //内存块第一次进入
+        if(hash.find(key) == hash.end())
+        {
+            //存满->删除
+            if(hash.size() == capacity){
+                hash.erase(queue.back().first);
+                queue.pop_back();
+            }
+        }
+        //如果已经在容器中了
+        else{
+            queue.erase(hash[key]);
+        }
+        queue.push_front(pair<int,int>(key,value));
+        hash[key] = queue.begin(); //如果没有自动插入，如果有则修改。
+    }
+
+
+
+
+
+
+private:
+    unsigned int capacity;
+    list<pair<int,int>> queue; // 头部放最新元素，尾巴放最老元素
+    map<int, list<pair<int,int>>::iterator > hash;
 
 };
 

@@ -22,6 +22,11 @@
 #include "Chapter9/empalce_vs_push.h"
 #include "Houjie/iterator_detail.h"
 #include "Chapter9/Adapter.h"
+
+#include "Chapter9/forward_list.h"
+#include "Chapter9/resize_fun.h"
+#include "Chapter15/base_and_derive.h"
+
 #include "Chapter15/inherit.h"
 
 //""
@@ -318,12 +323,12 @@ int main() {
 //    int vv2 = 10;
 //    const int vv3 = vv2;
 //    funcs::fcn(vv2);
-    int i_ff = 0;
-    const int ci = i_ff;
+    //int i_ff = 0;
+    //const int ci = i_ff;
     //const int &r = i_ff;
-    funcs::reset(&i_ff); //ptr
+    //funcs::reset(&i_ff); //ptr
     //funcs::reset(&ci);  // const int* != int *
-    funcs::reset(i);
+    //funcs::reset(i);
     //funcs::reset(ci);
     //funcs::reset(42); // 字面值只能绑定const ref
     //funcs::is_empty("weferaf");
@@ -356,16 +361,18 @@ int main() {
 //    multi_array::get_val( s122, 0)  = 'K' ;
 //    std::vector<std::string > vecStr = multi_array::proecess();
 //    std::cout << vecStr.front() << std::endl;
+    /*
       int ia[10];
       for(int i= 0; i != 10 ;i++){
          // std::cout <<  multi_array::get(ia,i) << std::endl;
          multi_array::get(ia,i) = i;     //给函数返回值赋值
       }
-
+            */
 // vec {1, 2, 3, 4, 5,6,7,8};
 //     multi_array::print(vec.cbegin() , vec.cend());
 
     //typedef int arrT[10] ;
+    /*
     using arrT =  int[10] ;  //以上两种别名方法等价
     arrT myArray; // 等价于 int myArray[10];
     arrT* func(int i); // 返回指针，指向一个长为10的int型数组
@@ -376,10 +383,11 @@ int main() {
 
     int odd[] = {1,3,5,7,9};
     int even[] = {0,2,4,6,8};
+     */
 
    // decltype(odd) *ptr
+   /*
    std::string stt[10] = {};
-
    //被当成数组
    std::string (*strsdddd)[10] = nullptr;
    std::string (&strrssRef)[10] = stt;
@@ -393,7 +401,7 @@ int main() {
    const char* cp = &aatt;  //
    char *pppt = const_cast<char*>(cp);
    *pppt = 't';
-
+    */
    //funcs::scrren(15);
    //funcs::ts();
    //funcs::ts(24,'*');
@@ -478,6 +486,7 @@ int main() {
     //w3 = w1; // operator =
     //char name[] = "Darla";
 
+    /*
     string s11 = "whatisyourname";
     string s12 = "sssss";
     std::unordered_set<char> unorder = {};
@@ -541,6 +550,7 @@ int main() {
     Data vall = {0,"Anna"}; //初始值顺序要与声明顺序一致
 
     double rrd;
+    Account::rate(10.5f);
     rrd = Account::rate();
     Account cac;
 
@@ -678,6 +688,25 @@ int main() {
     find_str();
     fun_9_47();
 
+
+    //ofstream out1, out2;
+    //out1 = out2;
+
+    forward_list<int> flst = {1,2,3,4,5,6,7};
+    func_9_27(flst);
+
+    forward_list<string> stringf = {"woc","MIKU","wod"};
+    func_9_28(stringf,"ddd","sama");
+    func_test();
+    std::cout << "func_invalid_vec" << std::endl;
+    func_invalid_vec();
+    func_invalid_deque();
+    //func_donot_saveend(); //没有更新 end
+    fuc_9_31();
+
+    //
+    //base_derive* baseclass = new Bulk_quote2();  //Cannot cast 'Bulk_quote2' to its private base class 'base_derive'
+    Quote* quteclass = new Bulk_quote2();
     string inher_s = "woc";
     inhert_01 inher = inhert_01(inher_s, 15.0, 10 , 10);
     inher.f(inher);
