@@ -19,7 +19,6 @@ void priority_queue_vs_queue(){
     p_queue.push(2);
     p_queue.push(3);
     auto re = p_queue.top();
-
 }
 
 

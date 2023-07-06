@@ -22,8 +22,7 @@
 #include "Chapter9/empalce_vs_push.h"
 #include "Houjie/iterator_detail.h"
 #include "Chapter9/Adapter.h"
-
-
+#include "Chapter15/inherit.h"
 
 //""
 std::string globe_str;
@@ -678,6 +677,22 @@ int main() {
     auto resu2 = fun_9_46(sstt, "forn" ,"end");
     find_str();
     fun_9_47();
+
+    string inher_s = "woc";
+    inhert_01 inher = inhert_01(inher_s, 15.0, 10 , 10);
+    inher.f(inher);
+
+
+    Quote q1 = Quote();
+    //Bulk_quote* bulkP = &q1; //X q1中没有没有Bulk的成分，无法
+    //Bulk_quote& bulkr = q1;  //同上
+
+    Bulk_quote bq1 = Bulk_quote();
+    Quote *itemp = &bq1;    //bq1存在 Qutote部分，则可以转换
+    Bulk_quote *bulk = static_cast<Bulk_quote*>(itemp); // 本质上itemp指向bulk，但是在这一步看来，itemp是Quote类型，不存在bulk。所以不行
+    //print_total(std::cout , q1 , 10);
+    //print_total(std::cout , bq1 , 10);
+
 
     return 0;
 }
