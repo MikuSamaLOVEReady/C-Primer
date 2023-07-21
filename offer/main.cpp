@@ -27,6 +27,11 @@
 #include "146.h"
 #include "2460.h"
 #include "15.h"
+#include "11.h"
+#include "13.h"
+#include "offer-12.h"
+#include "16.h"
+#include "239H.h"
 
 
 
@@ -144,6 +149,20 @@ int main() {
 
     vector<int> testtt = {2,0,-2,-5,-5,-3,2,-4};
     auto fianl2 = threeSum(testtt);
+
+
+
+    vector<int> area = {1,8,6,2,5,4,8,3,7};
+    vector<int> area2 = {1,2,4,3};
+
+    int valtt = maxArea2(area2);
+    auto va = RomaToint({"MCMXCIV"});
+    auto va_roma = intToRoman(1994);
+
+    vector<int> test_vec =  {1,3,-1,-3,5,3,6,7};
+    //int my_ret = threeSumClosest2( test_vec ,16 );
+
+    auto outpp = maxSlidingWindow(test_vec,3);
 
 
 

@@ -26,8 +26,10 @@
 #include "Chapter9/forward_list.h"
 #include "Chapter9/resize_fun.h"
 #include "Chapter15/base_and_derive.h"
-
+#include "Chapter15/virtual_fun.h"
 #include "Chapter15/inherit.h"
+#include "Chapter15/protected_inherit.h"
+#include "Chapter10/Coursework10_1.h"
 
 //""
 std::string globe_str;
@@ -699,14 +701,14 @@ int main() {
     func_9_28(stringf,"ddd","sama");
     func_test();
     std::cout << "func_invalid_vec" << std::endl;
-    func_invalid_vec();
-    func_invalid_deque();
+    //func_invalid_vec();
+    //func_invalid_deque();
     //func_donot_saveend(); //没有更新 end
     fuc_9_31();
 
     //
     //base_derive* baseclass = new Bulk_quote2();  //Cannot cast 'Bulk_quote2' to its private base class 'base_derive'
-    Quote* quteclass = new Bulk_quote2();
+    //Quote* quteclass = new Bulk_quote2();
     string inher_s = "woc";
     inhert_01 inher = inhert_01(inher_s, 15.0, 10 , 10);
     inher.f(inher);
@@ -717,10 +719,28 @@ int main() {
     //Bulk_quote& bulkr = q1;  //同上
 
     Bulk_quote bq1 = Bulk_quote();
-    Quote *itemp = &bq1;    //bq1存在 Qutote部分，则可以转换
-    Bulk_quote *bulk = static_cast<Bulk_quote*>(itemp); // 本质上itemp指向bulk，但是在这一步看来，itemp是Quote类型，不存在bulk。所以不行
+    //Quote *itemp = &bq1;    //bq1存在 Qutote部分，则可以转换
+    //Bulk_quote *bulk = static_cast<Bulk_quote*>(itemp); // 本质上itemp指向bulk，但是在这一步看来，itemp是Quote类型，不存在bulk。所以不行
     //print_total(std::cout , q1 , 10);
     //print_total(std::cout , bq1 , 10);
+
+    D2 d2;
+    d2.f2();
+    D3 d3;
+    d3.f2();
+
+    Pub_Drive d_1;
+    Priv_Drive d_2;
+    pro_Drive d_3;
+    d_1.pub_mem();
+    //d2.pub_mem();
+    d_3.f(); // 无法
+
+
+
+    D3* test_b = new D3();
+    default_paraprint(test_b);
+    fun_10_1(10);
 
 
     return 0;

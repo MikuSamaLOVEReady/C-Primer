@@ -6,15 +6,15 @@
 #define CHAPTER7_BASE_AND_DERIVE_H
 
 
-class Quote{
+class Quote2{
 public:
-    Quote() = default;
-    Quote(const std::string& book):bookNo(book){};
+    Quote2() = default;
+    Quote2(const std::string& book):bookNo(book){};
 
     //虚函数
     virtual double net_price(std::size_t n) const {return n*price; }
     //为什么要？
-    virtual ~Quote() = default; //
+    virtual ~Quote2() = default; //
 private:
     std::string bookNo;
 
@@ -27,19 +27,21 @@ public:
     base_derive();
 };
 
-class Bulk_quote: public Quote{
+class Bulk_quote: public Quote2{
 public:
     Bulk_quote() = default;
     Bulk_quote(const std::string& , double , std::size_t , double);
-    //只能出现在类内部声明语句之前
-    virtual double net_price(std::size_t) const override;
+    //virtual 只能出现在类内部声明语句之前
+    virtual double net_price(std::size_t) const override {
+        return 15.0f;
+    }
 //新增两个元素
 private:
     std::size_t  mid_qty = 0;
     double discount = 0;
 };
 
-class Bulk_quote2: private base_derive , public Quote{
+class Bulk_quote2: private base_derive , public Quote2{
 public:
     Bulk_quote2();
 
