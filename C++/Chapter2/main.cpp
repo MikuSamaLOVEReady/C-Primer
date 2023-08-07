@@ -22,7 +22,8 @@
 #include "Chapter9/empalce_vs_push.h"
 #include "Houjie/iterator_detail.h"
 #include "Chapter9/Adapter.h"
-
+#include <algorithm>
+#include "Chapter8/iostream_test.h"
 #include "Chapter9/forward_list.h"
 #include "Chapter9/resize_fun.h"
 #include "Chapter15/base_and_derive.h"
@@ -30,6 +31,16 @@
 #include "Chapter15/inherit.h"
 #include "Chapter15/protected_inherit.h"
 #include "Chapter10/Coursework10_1.h"
+#include "Chapter10/read_only.h"
+#include "Chapter10/send_func_to_Algorithm.h"
+#include "Chapter10/Lambda_expression.h"
+#include "Chapter10/bind_parameter.h"
+#include <fstream>
+#include "Chapter12/smart_ptr.h"
+#include "Chapter15/deCons.h"
+#include <filesystem>
+#include "Chapter8/filesteam.h"
+#include "Chapter8/sstream.h"
 
 //""
 std::string globe_str;
@@ -740,8 +751,67 @@ int main() {
 
     D3* test_b = new D3();
     default_paraprint(test_b);
-    fun_10_1(10);
+   // fun_10_1(10);
+    fun_10_3();
+    fun_10_4();
+    fun_10_5();
+    //fun_10_7();
+    std::vector<std::string> vs{ "a", "v", "aabb", "b", "c", "a", "a" };
+    elimDups(vs);
 
+    auto v_e = std::vector<std::string>{ "a", "as", "aasss", "aaaaassaa", "aaaaaabba", "aaa" };
+    auto it_aka = std::partition(v_e.begin(), v_e.end(), less_5);
 
+    for(auto it = it_aka ; it != v_e.end() ; ++it){
+        std::cout << *it << std::endl;
+    }
+
+    std::cout << std::endl;
+
+    fun_10_14();
+    fun_10_15();
+    auto v_e2 = std::vector<std::string>{ "a", "ddddddddd", "aasss", "aaaaassaa", "aaaaaabba", "aaa" };
+    //fun_10_18(v_e2);
+    value_copy();
+    ref_copu();
+    fcn3();
+    find_string("w");
+    std::cout << cont_if(v_e2) <<std::endl;
+
+    std::ofstream outputFile2;
+    char sepra = ' ';
+    //std::for_each(v_e2.begin(), v_e2.end(), [&outputFile2,sepra](const std::string& s) {};
+
+    //shar_ptr();
+    MyStruct_f data;
+    data.field1 = 23;
+    data.field2 = 33.4;
+    std::ofstream outdes("data.txt", std::ofstream::app);
+    if(outdes.is_open()){
+        outdes <<  data.field1 << " " <<  data.field2 << "\n";
+        outdes.close();
+        std::cout << "Data written to file." << std::endl;
+    }
+    else{
+        std::cerr << "Unable to open file for writing." << std::endl;
+    }
+
+    //my_fun(std::cin);
+    //在delete一个父类的时候，确保能动态绑定到子类的decon，这样从外而内的析构
+    Base_cal* ptr = new Derived_cal();
+    delete ptr;
+    std::cout << "Current working directory: " << std::filesystem::current_path() << std::endl;
+    fun_fstream();
+    file_wrte();
+    //sstr_test();
+    fun_8_10();
+    //5fun_8_11();
+    obj ol;
+    fun_8_3();
+
+    //StrBlob stB = {"woc","nima"}; //如果是explicit的，那么就不会调用initializer_list的构造函数
+    std::initializer_list<int>();
+
+    std::cout << "Current working directory: "  << std::endl;
     return 0;
 }

@@ -13,9 +13,8 @@ class Sales_data{
  friend std::istream& read(std::istream&, Sales_data&);
  friend bool compareIsbn(const Sales_data &lhs , const Sales_data &rhs);
 
- std::string isbn() const { return this->BookNO;}
-
 public:
+    std::string isbn() const { return this->BookNO;}
     Sales_data& combine(const Sales_data&){};
     Sales_data(std::string s , unsigned cnt , double price):BookNO(s),units_sold(cnt),revenue(cnt*price){
         std::cout<< "most base" <<std::endl;

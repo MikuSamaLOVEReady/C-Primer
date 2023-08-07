@@ -8,5 +8,5 @@ add_executable(Chapter7 main.cpp file_1.cpp file_1.h chapter2.6.cpp chapter2.6.h
         Chapter7/Screen.cpp Chapter7/Screen.h effective/chapter-0.h Unordered/unordered_map.h Unordered/unordered_set.h Chapter7/firend_class.h
         Chapter11/associative-container.h Chapter11/pair.h Chapter7/defaule_vale.h Chapter7/Data.h Chapter7/Data.cpp Chapter8/iostream_test.h
         Chapter9/sequence_contain.h Chapter9/empalce_vs_push.h Houjie/iterator_detail.h Chapter9/forward_list.h Chapter9/resize_fun.h  Chapter9/Adapter.h
-        Chapter15/base_and_derive.h Chapter15/inherit.h inherit.cpp Chapter15/virtual_fun.h Chapter15/protected_inherit.h Chapter10/Coursework10_1.h Chapter10/read_only.h)
+        Chapter15/base_and_derive.h Chapter15/inherit.h inherit.cpp Chapter15/virtual_fun.h Chapter15/protected_inherit.h Chapter10/Coursework10_1.h Chapter10/read_only.h Chapter10/send_func_to_Algorithm.h Chapter10/Lambda_expression.h Chapter10/bind_parameter.h Chapter12/smart_ptr.h Chapter12/smart_ptr.cpp Chapter15/deCons.h Chapter8/filesteam.h Chapter8/sstream.h)
 
