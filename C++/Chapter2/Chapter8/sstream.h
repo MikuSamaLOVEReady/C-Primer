@@ -73,6 +73,7 @@ void fun_8_3(){
     ostringstream ostr;
     ostr << "woc" << " ";
     ostr << "1245163";
+    ostr << 52;
     string s1 =  "woc";
     int va = 52;
     s1 += va;//

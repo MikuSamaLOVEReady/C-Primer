@@ -68,4 +68,14 @@ bool cmpvecAlist (list<int> &v1 , vector<int> &v2){
     return v1==v2_copy;
 }
 
+void constpexr(){
+
+    constexpr int va  =10; //
+    const int sizee = 124;
+    constexpr int my_va = va + sizee;
+    int arrp[sizee];
+    int arr2p[va];
+
+}
+
 #endif //CHAPTER7_SEQUENCE_CONTAIN_H

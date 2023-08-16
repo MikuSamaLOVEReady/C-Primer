@@ -13,6 +13,7 @@ std::ostream& print(std::ostream& str, const Sales_data& data){
     return str;
 }
 
+//ifstream >>
 std::istream& read(std::istream& str, Sales_data& data){
     std::cout<< "this is print function" << std::endl;
     return str;

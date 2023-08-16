@@ -78,4 +78,5 @@ void fuc_9_31(){
 
 
 
+
 #endif //CHAPTER7_RESIZE_FUN_H

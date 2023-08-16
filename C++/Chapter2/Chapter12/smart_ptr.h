@@ -81,7 +81,7 @@ private:
 };
 
 
-
+void fun_directly_control();
 
 
 

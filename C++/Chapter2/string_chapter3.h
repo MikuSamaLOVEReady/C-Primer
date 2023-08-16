@@ -389,7 +389,8 @@ namespace strr{
     void c_stirng_char(){
         std::string hello = "hello";
         const char* ptr = hello.c_str(); //取到一个pointer 指向了string
-        c_stirngModify(hello);  // string是动态分配的内存，可能
+        c_modify(hello);
+        //c_stirngModify(hello);  // string是动态分配的内存，可能
         std::cout << "c_str() returns: " << ptr << std::endl;
     }
 

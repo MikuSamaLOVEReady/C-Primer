@@ -34,5 +34,11 @@ std::string& StrBlob::back() const{
     return data->back();
 }
 
+void fun_directly_control(){
+    int* i = new int(129);
+    std::cout << "Current working directory: "  << std::endl;
+    //std::string *ps1 = n
+}
+
 
 

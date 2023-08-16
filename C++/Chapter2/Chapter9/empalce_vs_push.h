@@ -184,6 +184,7 @@ void stirng_append_replace(){
 void string_erasetest(){
     string s = "mikusama";
     auto it = s.erase(s.begin()+3 , s.end());
+    s.insert(s.size(),5,'d'); //在某pos上插入
     if(it == s.end()) {
         std::cout << s  << std::endl;
     }
@@ -199,7 +200,6 @@ void string_insert(){
 void fun_9_43(string& s , const string& oldVal , const string& newVal){
     //这里单独保存begin问题不大吧
     auto cur = s.begin();
-    //
     while( cur <= s.end() - oldVal.size() ){
         //前闭后开,直接构造临时变量
         if(oldVal == string{cur , cur+oldVal.size()}){
@@ -231,17 +231,23 @@ void fun_9_44(string& s , const string& oldVal , const string& newVal){
 
 string fun_9_45(string& s , const string& front , const string& end){
     s.insert(s.begin(), front.cbegin() , front.cend());
+    //s.append(end.begin(),end.end());
     return  s.append(end);
 }
 
 string fun_9_46(string& s , const string& front , const string& end){
     s.insert(0, front);
-    return s.insert(s.size(),end);;
+    return s.insert(s.size(),end); //在end之前添加新
 }
 
 void find_str(){
-    string s = "05678str";
+    string s = "strdwefgewstr";
+    int cur_id = s.find("str",9);
     string numbers = "0123456789";
+    auto re = s.find(numbers);
+    if(re == string::npos){
+        std::cout << "woc" <<std::endl;
+    }
     int id = s.find_first_not_of(numbers);
     int id_2 = s.find_first_of(numbers);
     std::cout << s <<std::endl;
@@ -263,13 +269,57 @@ void fun_9_47(){
     }
 }
 
+void fun_9_49(){
+    string ascendAnddecend = "aceimnorsuvwxz";
+
+    string longgest;
+    auto check_str = [&longgest, &ascendAnddecend](const string& s){
+        //表示不含 错误字符
+        if(longgest.find_first_not_of(ascendAnddecend)==string::npos){
+                longgest = longgest.size() > s.size() ? longgest : s;
+        }
+    };
+
+   // for(string curr ; ; )
+
+}
+
 //
 void fun_changeString(){
     int  i = 42;
     string s = to_string(i);
-    double d = stod(s);
+    string s2 = "3424.323425";
+    double d = stod(s2);
+    std::cout <<  "woc !" << std::endl;
 }
 
+void fun_9_50(){
+    vector<string> s1 = {"1","2","1","2","1","2","1","2"};
+    vector<string> s2 = {"1.5","2.3","1.6","2.2","1.4","2.5","1.61","2.2352"};
+
+    int re1 = 0;
+    double re2 = 0;
+    for(auto v : s1){
+        re1 += stoi(v);
+    }
+    for(auto v : s2){
+        re2 += stod(v);
+    }
+    std::cout << re1 << re2 << std::endl;
+}
+
+
+class Mydate{
+public:
+    Mydate(string& s){
+
+    };
+private:
+    unsigned int year;
+    unsigned int mounth;
+    unsigned int day;
+
+};
 
 
 

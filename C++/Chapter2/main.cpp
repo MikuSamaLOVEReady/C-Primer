@@ -41,6 +41,10 @@
 #include <filesystem>
 #include "Chapter8/filesteam.h"
 #include "Chapter8/sstream.h"
+#include "Chapter12/dyna_const.h"
+#include "Chapter12/deltetor.h"
+#include "Chapter12/trickofSp.h"
+#include "Chapter5/exception_test.h"
 
 //""
 std::string globe_str;
@@ -695,8 +699,8 @@ int main() {
     string s{ "To drive tho thou is a foolish, tho courageous act." };
     //string_insertAndErase_index(s, "tho", "though");
     std::cout << s <<std::endl;
-    string sstt = "name";
-    auto resu = fun_9_45(sstt, "forn" ,"end");
+    string sstt = "Luo";
+    auto resu = fun_9_45(sstt, "Mr." ,"Jr.");
     auto resu2 = fun_9_46(sstt, "forn" ,"end");
     find_str();
     fun_9_47();
@@ -783,6 +787,7 @@ int main() {
     //std::for_each(v_e2.begin(), v_e2.end(), [&outputFile2,sepra](const std::string& s) {};
 
     //shar_ptr();
+    /*
     MyStruct_f data;
     data.field1 = 23;
     data.field2 = 33.4;
@@ -795,23 +800,96 @@ int main() {
     else{
         std::cerr << "Unable to open file for writing." << std::endl;
     }
+    */
 
     //my_fun(std::cin);
     //在delete一个父类的时候，确保能动态绑定到子类的decon，这样从外而内的析构
     Base_cal* ptr = new Derived_cal();
     delete ptr;
     std::cout << "Current working directory: " << std::filesystem::current_path() << std::endl;
-    fun_fstream();
-    file_wrte();
+    //fun_fstream();
+    //file_wrte();
     //sstr_test();
-    fun_8_10();
+    //fun_8_10();
     //5fun_8_11();
     obj ol;
-    fun_8_3();
+    //fun_8_3();
 
     //StrBlob stB = {"woc","nima"}; //如果是explicit的，那么就不会调用initializer_list的构造函数
     std::initializer_list<int>();
+    strr::c_stirng_char();
+    string_erasetest();
+    string st_ss = "thro";
+    fun_9_43( st_ss , "hro", "abcd");
+    file_read_double();
+    fun_directly_control();
+    const my_cl* ptr_my = new my_cl; //创建
+    const my_cl* ptr_my_2 = new const my_cl();
+    //ptr_my->v = 100;
+    BB* b_ptr = new BB();   // 这种 obj中存在 还没有被初始化的的值
+    Point point = Point();  //
+    obj* o_ptr = new obj();
 
-    std::cout << "Current working directory: "  << std::endl;
+    int* p2 = new int;
+    int* ptrr3 = new (nothrow) int;
+
+    //释放动态内存
+    int i_ptr , *pi1 = &i_ptr , *pi2 = nullptr;
+    double *pd = new double(33) , *pd2 = pd;
+    //delete i_ptr; wrong
+    //delete  pi1; // WRONG：未定义，释放局部变量
+    delete  pd;  // GOOD:
+    //delete  pd2; // WRONG：new过的对象只能delete一次
+    delete  pi2; // GOOD: delete null指针总是可行的
+
+    //释放const
+    const int *pci = new const int(1024);
+    delete(pci);
+
+    vector<int>* v_pt = new vector<int>();
+    //print_vec(decon_vec(make_dynamic()));
+    //print_vec(v_pt);
+    //delete v_pt;
+
+    //本身就是一个指针了，不需要在增加一个*在<>内部
+    shared_ptr<vector<int>> v_ptr = make_shared<vector<int>>();
+    //fun_12_7_print(fun_12_7_read(fun_12_7_create()));
+
+    //shared_ptr<int> shar_p = new int(15); //WRONG
+    shared_ptr<int> shar_p( new int (15)); // 可以
+
+    if(b_ptrr()){
+        std::cout <<  "woc !" << std::endl;
+    }
+
+    float* my_ff =  new float(23515.3);
+    shared_ptr<float> spptr(my_ff);
+
+    //shared_ptr<float>(my_ff);
+    shared_ptr<int>(qewtet);
+    //auto vat = *qewtet;
+
+    int *x(new int(1024)); // 只是一个普通指针
+    int pre_xxx = *x;
+    //process(x);
+    process(shared_ptr<int>(x)); //产生一个临时智能指针,在process结束后消失，智能指针释放内存
+    int jjtr = *x;  // 此时x所指向
+    smart_ptr();
+    //func_12_10_main();
+    //func_12_11_main();
+    //fun_12_13();
+    //continue_run();
+    //continue_without_run();
+    //delete_ete();
+    fun_changeString();
+    fun_9_50();
+    Mydate mdata((string &) "woc"); //如果是implicit构造的话，则会传递value
+
+
+
+
+
+
+    std::cout <<  "woc !" << std::endl;
     return 0;
 }
