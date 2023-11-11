@@ -126,6 +126,7 @@ void fcn3(){
     ::size_t v1 = 42;
     auto f = [v1] () mutable ->int  {return ++v1;};
     std::cout << f() << std::endl;
+    std::cout << v1  << std::endl;
 }
 
 void fuc4(){

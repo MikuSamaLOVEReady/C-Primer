@@ -45,6 +45,22 @@
 #include "Chapter12/deltetor.h"
 #include "Chapter12/trickofSp.h"
 #include "Chapter5/exception_test.h"
+#include "Chapter12/unique.h"
+#include "EgienLearn/Eigen_test.h"
+#include "edabit/QuadraticEquation.h"
+#include "C++11/Variadic_test.h"
+#include "C++11/Variadic_class.h"
+#include "C++11/Extra_nullptr_t.h"
+#include <unordered_map>
+#include "C++11/InitializeList.h"
+//#include <tuple>
+#include <array>
+#include "C++11/default+delete.h"
+#include "C++11/Aliastemp.h"
+#include "C++11/variadic_printf.h"
+#include "C++11/decltype_test.h"
+#include "C++11/Variadic_class.h"
+#include "C++11/STLNew/RValue_Ref.h"
 
 //""
 std::string globe_str;
@@ -55,6 +71,102 @@ struct Foo
 };
 
 //const int value;
+void CrunNewFeature(){
+    std::cout << __cplusplus <<std::endl;
+    printX(7.5 , "woc" , bitset<16>(377) , 42);
+
+    //递归继承
+    mytuple<int , float , string> (1,25.3 , "woc");
+
+    //std::nullptr_t vs nullptr
+
+    int va = 100;
+    int* ptt = nullptr;
+    //foo(ptt);
+    bar(ptt);
+    //f(ptt);
+    //f(0);
+
+    auto I = [](int x) -> bool{
+    };
+
+    //vector<std::string>();
+    // {arg1 , arg2 , arg3 } ->  initializer_list<int> --> 并转化为 array<T,n> 数组，
+    // 在调用构造函数时候，特别是vector容器的时候  ， 这些 元素会被 一个个 拿出来 作为参数构造 容器的元素
+    // 但如果直接存在 一个initializer_list 则会直接整体传递
+
+    int i; // 未初始化
+    int j{};
+    int* p; // 未初始化
+    int* q{}; //设置指针初值 = NULL
+    //int x3{5.0}; // 初始化不允许 大精度 -> 小精度
+
+    std::cout << "WOC" << std::endl;
+}
+
+void Arraytest(){
+
+    array<int , 10> ar;
+    //initializer_list
+
+    vector<double> vec{1,2,3,4,5};
+
+    //for(auto elem : vec){}
+
+    //for( auto& elem : vec){}
+
+//    for(auto _pos = vec.begin() ,
+//            _end = vec.end()
+//            ; _pos != _end ;++_pos)
+//    {
+//
+//    }
+
+
+}
+
+void defauAndDelete(){
+    Zoo z1;
+    Zoo z2(z1);
+}
+
+template<typename T>
+using Vec = std::vector<T, std::allocator<T>>;
+
+void templateAlise(){
+    int aa = 100;
+    float bb = 10.234f;
+    test_move(aa , bb);
+    XCls<string , Vec> c1;
+}
+
+void setdeclTest(){
+    //std::set<int , decltype(cmp)> coll(cmp);
+
+    //cout << make_tuple(7.5 , "woc" , bitset<16>(377) , 42);
+
+    tup2<int> t(41);//6.3 , "nico"
+    tup2<int ,float> t2 (41, 6.3);
+    std::cout << sizeof(t) << std::endl;
+    std::cout << sizeof(t2) << std::endl;
+    //std::cout << t.head() << std::endl;
+    //std::cout << t.tail().head() << std::endl;
+    //std::cout << t.tail().tail().head() << std::endl;
+
+    compositetup< int , float , std::string> coposiTupobj (41 , 6.3 , "nico");
+
+    std::string s1("Hello");
+    std::string s2("World");
+    s1+s2 = s2; // s1 + s2 不是 rvalue？？？
+    std::string() = "Woc"; // 例外！
+
+    //std::complex<int>
+    myMoveStr mmsrt = myMoveStr();
+
+    forward(15);
+
+
+}
 
 
 int main() {
@@ -874,20 +986,38 @@ int main() {
     //process(x);
     process(shared_ptr<int>(x)); //产生一个临时智能指针,在process结束后消失，智能指针释放内存
     int jjtr = *x;  // 此时x所指向
-    smart_ptr();
+    //smart_ptr();
     //func_12_10_main();
     //func_12_11_main();
     //fun_12_13();
     //continue_run();
     //continue_without_run();
     //delete_ete();
-    fun_changeString();
-    fun_9_50();
-    Mydate mdata((string &) "woc"); //如果是implicit构造的话，则会传递value
+    //fun_changeString();
+    //fun_9_50();
+    //Mydate mdata((string &) "woc"); //如果是implicit构造的话，则会传递value
 
+    string date01 = "January 1, 1900";
+    string date02 = "Jan 1, 1900";
+    string date03 = "Jan 1 1900";
+    string date04 = "1/1/1900";
+    //fun_9_51(date04);
+    //adaptor_deque();
+    string stbra = "{}f{}{dfawf}";
+    bool rer = brakets(stbra);
+    unique_base();
+    //fun_12_17();
+    eigen_rotate();
 
+    quaraticEquation(2,-7,3);
+    CrunNewFeature();
+    templateAlise();
+    int incre_id = 0;
+    plustest(incre_id);
+    my_printf("%d %s" , 15 , "woc");
+    setdeclTest();
 
-
+    //std::max()
 
 
     std::cout <<  "woc !" << std::endl;

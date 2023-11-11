@@ -137,5 +137,45 @@ void fun_12_13(){
 }
 
 
+struct connection {
+    std::string ip;
+    int port;
+    connection(std::string ip_, int port_):ip(ip_), port(port_){ }
+};
+
+struct destination {
+    std::string ip;
+    int port;
+    destination(std::string ip_, int port_):ip(ip_), port(port_){ }
+};
+
+connection connect(destination* pDest)
+{
+    std::shared_ptr<connection> pConn(new connection(pDest->ip, pDest->port));
+    std::cout << "creating connection(" << pConn.use_count() << ")" << std::endl;
+    return *pConn;
+}
+
+void end_disconnect(connection* p){
+
+}
+
+void fun_12_14(){
+
+    //std::shared_ptr<>()
+    destination dest("202.118.176.67", 3316);
+    connection conn = connect(&dest);
+    std::shared_ptr<connection> p (&conn,[](connection *p){  });
+    //std::shared_ptr<connection> p (&conn, end_disconnect);
+}
+
+void uniq_delet(){
+
+    destination dest("202.118.176.67", 3316);
+    connection conn = connect(&dest);
+    unique_ptr<connection, decltype(end_disconnect)* > p(&conn,end_disconnect) ;
+}
+
+
 
 #endif //CHAPTER7_DYNA_CONST_H

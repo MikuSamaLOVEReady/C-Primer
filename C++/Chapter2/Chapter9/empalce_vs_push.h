@@ -315,11 +315,63 @@ public:
 
     };
 private:
+    //内置类型 ，进行默认初始化 没有值初始化
     unsigned int year;
     unsigned int mounth;
     unsigned int day;
-
 };
+
+void fun_9_51 (string& s) {
+
+    unsigned year , month , day;
+
+    unsigned tag = 0;
+    unsigned format = 0;
+
+    //string date04 = "1/1/1900";
+    std::cout << sizeof(tag) << std::endl; // 4bytes
+    if(s.find_first_of("/") != string::npos){
+            format = 0x01;
+    }
+
+    //  string date01 = "January 1, 1900";
+    //    string date02 = "Jan 1, 1900";
+    if(s.find_first_of(',') >= 4 && s.find_first_of(',') != string::npos)
+    {
+            format = 0x10;
+    }
+    else{
+        //string date03 = "Jan 1 1900";
+        if(s.find_first_of(' ') >= 3 && s.find_first_of(' ') != string::npos)
+        {
+            format = 0x10;
+            tag = 1;
+        }
+    }
+
+    int va1 = s.find_last_of("/");
+    int va2 = s.find_first_of("/");
+    auto str = s.substr(s.find_first_of("/")+1,s.find_last_of("/") - s.find_first_of("/"));
+    switch(format){
+        case 0x01:
+            day = stoi(s.substr(0,s.find_first_of("/"))); //[0,1)
+            month = stoi(s.substr(s.find_first_of("/")+1,
+                                  s.find_last_of("/") - s.find_first_of("/")-1)); //[1,2)
+            year = stoi(s.substr(s.find_last_of("/")+1 ,4)); //
+
+            break;
+        case 0x10:
+
+            break;
+    }
+
+
+    std::cout << format  << std::endl; // 4bytes
+
+
+}
+
+
 
 
 
