@@ -58,9 +58,10 @@
 #include "C++11/default+delete.h"
 #include "C++11/Aliastemp.h"
 #include "C++11/variadic_printf.h"
-#include "C++11/decltype_test.h"
+//#include "C++11/decltype_test.h"
 #include "C++11/Variadic_class.h"
 #include "C++11/STLNew/RValue_Ref.h"
+#include "C++11/STLNew/STLhash.h"
 
 //""
 std::string globe_str;
@@ -162,12 +163,12 @@ void setdeclTest(){
 
     //std::complex<int>
     myMoveStr mmsrt = myMoveStr();
-
     forward(15);
-
-
 }
 
+void hash_test(){
+    print_hash();
+}
 
 int main() {
     //用的是一个const值

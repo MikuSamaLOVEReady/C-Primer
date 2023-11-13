@@ -13,7 +13,7 @@ public:
     static ::size_t MCtor;
     static ::size_t CAsgn;
     static ::size_t MAsgn;
-    static ::size_t Dtor;
+    static inline ::size_t Dtor  = 0 ; //类内初始化
 
 
 private:
@@ -84,6 +84,8 @@ public:
             delete _data;
         }
     }
+
+
 
 };
 
