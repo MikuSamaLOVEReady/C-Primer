@@ -62,6 +62,8 @@
 #include "C++11/Variadic_class.h"
 #include "C++11/STLNew/RValue_Ref.h"
 #include "C++11/STLNew/STLhash.h"
+#include "bitset"
+#include "C++11/Suggest55/law_no_virtual_fuc_inCtr.h"
 
 //""
 std::string globe_str;
@@ -139,6 +141,8 @@ void templateAlise(){
     float bb = 10.234f;
     test_move(aa , bb);
     XCls<string , Vec> c1;
+
+    MyTransction obj;
 }
 
 void setdeclTest(){

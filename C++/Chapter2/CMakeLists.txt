@@ -13,6 +13,10 @@ add_executable(Chapter7 main.cpp file_1.cpp file_1.h chapter2.6.cpp chapter2.6.h
         Chapter15/base_and_derive.h Chapter15/inherit.h inherit.cpp Chapter15/virtual_fun.h Chapter15/protected_inherit.h Chapter10/Coursework10_1.h Chapter10/read_only.h Chapter10/send_func_to_Algorithm.h
         Chapter10/Lambda_expression.h Chapter10/bind_parameter.h Chapter12/smart_ptr.h Chapter12/smart_ptr.cpp Chapter15/deCons.h Chapter8/filesteam.h Chapter8/sstream.h Chapter12/dyna_const.h
         Chapter5/exception_test.h Chapter12/deltetor.h
-        Chapter12/trickofSp.h Chapter12/unique.h EgienLearn/Eigen_test.h Tree-Algorithm/KD-Tree.h edabit/QuadraticEquation.h C++11/Variadic_test.h C++11/Variadic_class.h C++11/Extra_nullptr_t.h C++11/InitializeList.h C++11/explicit_more_than_1.h C++11/default+delete.h C++11/Aliastemp.h C++11/Type_Alias.h C++11/decltype_test.h C++11/variadic_printf.h C++11/STLNew/RValue_Ref.h C++11/STLNew/STLhash.h)
+        Chapter12/trickofSp.h Chapter12/unique.h EgienLearn/Eigen_test.h Tree-Algorithm/KD-Tree.h edabit/QuadraticEquation.h C++11/Variadic_test.h C++11/Variadic_class.h C++11/Extra_nullptr_t.h C++11/InitializeList.h C++11/explicit_more_than_1.h C++11/default+delete.h C++11/Aliastemp.h C++11/Type_Alias.h C++11/decltype_test.h C++11/variadic_printf.h C++11/STLNew/RValue_Ref.h C++11/STLNew/STLhash.h
+        C++11/STLNew/non_local_static.cpp
+        C++11/STLNew/non_local_static.h
+        C++11/Suggest55/law_no_virtual_fuc_inCtr.cpp
+        C++11/Suggest55/law_no_virtual_fuc_inCtr.h)
 
 
