@@ -30,13 +30,14 @@ public:
 
 };
 
-BuyTransaction b; //会调用base的构造函数。
+//BuyTransaction b; //会调用base的构造函数。
 
 
 class MyTransction{
 public:
+    MyTransction() = default;
     MyTransction(const std::string& loginfo);
-    void logTransaction(const std::string& loginfo);
+    void logTransaction(const std::string& loginfo){};
 
 };
 

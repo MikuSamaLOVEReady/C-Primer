@@ -6,7 +6,7 @@
 #define CHAPTER7_IOSTREAM_TEST_H
 #include <iostream>
 #include <fstream>
-
+#include <iomanip>
 
 istream& my_fun(istream& in){
    //while(in.rdstate()) //rdstate 读出来4bit 表示当前状态

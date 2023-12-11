@@ -1,7 +1,14 @@
 cmake_minimum_required(VERSION 3.24)
 project(Chapter7)
 
+
+
 set(CMAKE_CXX_STANDARD 17)
+#set(CMAKE_PREFIX_PATH "C:/Users/YX/Desktop/package/eigen-3.4.0")
+#find_package(Eigen3 REQUIRED)
+#target_include_directories(Chapter7 PUBLIC ${EIGEN3_INCLUDE_DIRS})
+set(EIGEN_DIR "C:/Users/YX/Desktop/package/eigen-3.4.0")
+include_directories(${EIGEN_DIR})
 include_directories(/usr/local/include/eigen3)
 
 
@@ -17,6 +24,8 @@ add_executable(Chapter7 main.cpp file_1.cpp file_1.h chapter2.6.cpp chapter2.6.h
         C++11/STLNew/non_local_static.cpp
         C++11/STLNew/non_local_static.h
         C++11/Suggest55/law_no_virtual_fuc_inCtr.cpp
-        C++11/Suggest55/law_no_virtual_fuc_inCtr.h)
+        C++11/Suggest55/law_no_virtual_fuc_inCtr.h
+        C++11/Suggest55/pass_by_value.cpp
+        C++11/Suggest55/pass_by_value.h)
 
 

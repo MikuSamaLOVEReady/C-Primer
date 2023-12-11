@@ -64,6 +64,7 @@
 #include "C++11/STLNew/STLhash.h"
 #include "bitset"
 #include "C++11/Suggest55/law_no_virtual_fuc_inCtr.h"
+#include "C++11/Suggest55/pass_by_value.h"
 
 //""
 std::string globe_str;
@@ -136,13 +137,24 @@ void defauAndDelete(){
 template<typename T>
 using Vec = std::vector<T, std::allocator<T>>;
 
+void printDispaly(Window w) {
+    w.display();
+}
+
+void printDisplayRef(const Window& wref){
+    wref.display();
+}
+
 void templateAlise(){
     int aa = 100;
     float bb = 10.234f;
     test_move(aa , bb);
     XCls<string , Vec> c1;
-
     MyTransction obj;
+
+    WindowWithScrool wsr1;
+    printDispaly(wsr1);
+    printDisplayRef(wsr1);
 }
 
 void setdeclTest(){
