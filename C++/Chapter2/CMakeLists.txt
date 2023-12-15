@@ -26,6 +26,8 @@ add_executable(Chapter7 main.cpp file_1.cpp file_1.h chapter2.6.cpp chapter2.6.h
         C++11/Suggest55/law_no_virtual_fuc_inCtr.cpp
         C++11/Suggest55/law_no_virtual_fuc_inCtr.h
         C++11/Suggest55/pass_by_value.cpp
-        C++11/Suggest55/pass_by_value.h)
+        C++11/Suggest55/pass_by_value.h
+        C++11/Suggest55/Pointer_implment.cpp
+        C++11/Suggest55/Pointer_implment.h)
 
 

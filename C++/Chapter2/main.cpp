@@ -65,6 +65,7 @@
 #include "bitset"
 #include "C++11/Suggest55/law_no_virtual_fuc_inCtr.h"
 #include "C++11/Suggest55/pass_by_value.h"
+#include "C++11/Suggest55/Pointer_implment.h"
 
 //""
 std::string globe_str;
@@ -155,6 +156,10 @@ void templateAlise(){
     WindowWithScrool wsr1;
     printDispaly(wsr1);
     printDisplayRef(wsr1);
+
+
+    Pointer_implment();
+
 }
 
 void setdeclTest(){
