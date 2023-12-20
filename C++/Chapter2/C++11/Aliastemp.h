@@ -28,12 +28,13 @@ void printDepp(T value){
 
 template <typename Container , typename T>
 void test_moveable(Container cntr , T elem){
-    //Container<T> c; // 这里的container 不一定是模版，编译器不允许通过
+    ///FIXME Container<T> c; // 这里的container 不一定是模版，编译器不允许通过
 
     //FIXME 所以想办法在模版定义的时候，就要告知compiler Container是一种模版
 }
 
 
+///using Vec = std::vector<T, std::allocator<T>>;
 template <typename T,
           template<class > class Container> //在声明的时候就告知Container自身是一个模版
 class XCls

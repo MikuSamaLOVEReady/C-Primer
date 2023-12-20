@@ -35,7 +35,7 @@ void fun_fstream(){
 
         std::cout << "output" << std::endl;
     }
-    std::cout << 'woc' << std::endl;
+    std::cout << "woc" << std::endl;
 }
 
 

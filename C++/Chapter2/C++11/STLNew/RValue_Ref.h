@@ -15,6 +15,11 @@ public:
     static ::size_t MAsgn;
     static inline ::size_t Dtor  = 0 ; //类内初始化
 
+    constexpr static const double myvalue = 10.5f;
+    /// 这俩操作是一致的
+    static const int _datai = 5;
+    const static int _datal = 151;
+
 
 private:
     char* _data;

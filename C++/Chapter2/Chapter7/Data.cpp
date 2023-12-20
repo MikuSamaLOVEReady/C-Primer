@@ -12,6 +12,7 @@ vector<double> Example::vec(Example::vecSize);
 
 double Account::initRate(){
     interestRate = 10.0f;
+    return interestRate;
 }
 
 double Account::interestRate = initRate();

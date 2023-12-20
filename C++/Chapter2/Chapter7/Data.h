@@ -19,6 +19,12 @@ public:
     static void rate(double);
     static double interestRate; //���ж���ֻ����һ��
 
+    Account& operator= (const Account&)
+    {
+        return *this;
+    }
+
+
 private:
     static constexpr int period = 30; //�ܸ���ʼֵ��static������������ ����ֵ��������constexpre
     double daily_tbl[period];

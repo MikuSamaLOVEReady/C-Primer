@@ -25,12 +25,12 @@ void unique_base(){
     string* mystr = new string("2341");
     std::cout << "woc!!!! " << *mystr << std::endl;
     p2.reset(mystr);  // 将p2指向mystr
-    p2.reset();          // p2指向null 并且它保管的内存指针所指的空间也同时释放
-    if(mystr == nullptr)
+    p2.reset();          // p2指向null 并且它保管的内存指针（mystr）所指的空间也同时释放
+    if(mystr == nullptr) // 所指向地址的内存被清理，但是mystr指针本身仍然有指向
     {
         std::cout << "woc" << std::endl;
     }
-    std::cout << "woc!!!! " << *mystr << std::endl;
+    //std::cout << "woc!!!! " << *mystr << std::endl;
 }
 
 //返回一个对象

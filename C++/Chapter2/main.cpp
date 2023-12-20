@@ -62,6 +62,11 @@
 #include "C++11/Variadic_class.h"
 #include "C++11/STLNew/RValue_Ref.h"
 #include "C++11/STLNew/STLhash.h"
+#include "bitset"
+#include "C++11/Suggest55/law_no_virtual_fuc_inCtr.h"
+#include "C++11/Suggest55/pass_by_value.h"
+#include "C++11/Suggest55/Pointer_implment.h"
+#include "C++11/Suggest55/DefiniVSDeclar.h"
 
 //""
 std::string globe_str;
@@ -134,11 +139,33 @@ void defauAndDelete(){
 template<typename T>
 using Vec = std::vector<T, std::allocator<T>>;
 
+void printDispaly(Window w) {
+    w.display();
+}
+
+void printDisplayRef(const Window& wref){
+    wref.display();
+}
+
 void templateAlise(){
     int aa = 100;
     float bb = 10.234f;
     test_move(aa , bb);
     XCls<string , Vec> c1;
+    MyTransction obj;
+
+    WindowWithScrool wsr1;
+    printDispaly(wsr1);
+    printDisplayRef(wsr1);
+    Pointer_implment();
+}
+
+void pure_vir(){
+//        Shape_v* ps = new Shape_v();
+        Shape_v* ps2 = new Rectangle_v;
+        ps2 -> draw();
+        ps2 -> Shape_v::draw();
+
 }
 
 void setdeclTest(){
@@ -169,6 +196,27 @@ void setdeclTest(){
 void hash_test(){
     print_hash();
 }
+
+void STL_Lear01(){
+
+    int ia[6] = {1,2,3,4,5,6};
+    vector myv(ia , ia+6);
+    //for_each(myv.begin() , myv.end(), printt<int>()); //functor 就像是一个对象
+    //printt<double>() (15.5f);
+
+    //printt<int> prttobj;
+
+    //printt<int> prttobj2();  //最好用 printt<int> prttobj3{}; uniform initialize来解决。
+
+
+    /// constexpr
+    int n = 1;
+    const int m = 10;
+    std::array<int , m> a1;
+
+
+}
+
 
 int main() {
     //用的是一个const值
@@ -1017,8 +1065,10 @@ int main() {
     plustest(incre_id);
     my_printf("%d %s" , 15 , "woc");
     setdeclTest();
+    STL_Lear01();
 
     //std::max()
+    pure_vir();
 
 
     std::cout <<  "woc !" << std::endl;
