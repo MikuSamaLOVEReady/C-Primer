@@ -158,7 +158,7 @@ void templateAlise(){
     printDisplayRef(wsr1);
 
 
-    Pointer_implment();
+   // Pointer_implment();
 
 }
 
