@@ -44,7 +44,7 @@ public:
 };
 
 
-/// 所有它对应的Derived class 应该怎么被构造？
+/// 脣霉脫脨脣眉露脭脫娄碌脛Derived class 脫娄赂脙脭玫脙麓卤禄鹿鹿脭矛拢驴
 
 
 
