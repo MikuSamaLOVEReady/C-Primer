@@ -6,6 +6,7 @@
 #define CHAPTER2_DEFINIVSDECLAR_H
 
 
+#include <string>
 class DefiniVSDeclar {
 
 private:
@@ -18,12 +19,14 @@ class Shape_v{
 
 public:
     virtual void draw() const  = 0;
+    virtual void static_ca(std::string s1 = "RED");
 
 };
 
 class Rectangle_v : public Shape_v{
 public:
     void draw() const override;
+    virtual void static_ca(std::string s1 = "LLL");
 
 };
 

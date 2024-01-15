@@ -67,6 +67,9 @@
 #include "C++11/Suggest55/pass_by_value.h"
 #include "C++11/Suggest55/Pointer_implment.h"
 #include "C++11/Suggest55/DefiniVSDeclar.h"
+#include "C++11/Suggest55/Pure_virDef.h"
+#include "C++11/Suggest55/suggTemlateMeth.h"
+#include "C++11/Suggest55/CopyCtr_Sp.h"
 
 //""
 std::string globe_str;
@@ -160,11 +163,52 @@ void templateAlise(){
     Pointer_implment();
 }
 
+
+void f(const number_& num){
+
+    std::cout << num.mysn << std::endl;
+
+}
+
+void f2( number_ num2){
+
+    std::cout << num2.mysn << std::endl;
+
+}
+
 void pure_vir(){
 //        Shape_v* ps = new Shape_v();
         Shape_v* ps2 = new Rectangle_v;
         ps2 -> draw();
-        ps2 -> Shape_v::draw();
+        ps2 -> Shape_v::draw(); //纯虚函数也能有定义
+
+        Pure_virDefin* p = new deri();
+        deri* der_p = new deri();
+
+        p -> Pure_virDefin::pure_test();
+        p->healthValue();
+        der_p->healthValue();
+
+        Enemy enemy{};
+        enemy.headValue();
+
+        // shared_ptr 按值传递，copy ctr会赋值一份
+        CopyCtr_Sp cp{};
+        cp.va = std::make_shared<int>(15);
+        std::cout << "spppp " <<cp.va.use_count() << std::endl; //1
+        CopyCtr_Sp cp2(cp);
+        std::cout << "spppp " <<cp2.va.use_count() << std::endl; //2
+
+
+        number_ a;
+        number_ b = a , c = b;
+        f2(a);
+        f2(b);
+        f2(c);
+
+        Shape_v* ps;
+        Shape_v* pc = new Rectangle_v();
+        pc->static_ca();
 
 }
 
@@ -1069,7 +1113,6 @@ int main() {
 
     //std::max()
     pure_vir();
-
 
     std::cout <<  "woc !" << std::endl;
     return 0;
