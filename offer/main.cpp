@@ -32,6 +32,7 @@
 #include "offer-12.h"
 #include "16.h"
 #include "239H.h"
+#include "2058.h"
 
 
 
@@ -164,6 +165,15 @@ int main() {
 
     auto outpp = maxSlidingWindow(test_vec,3);
 
+    vector<string >s1 = {"leetcode","is","amazing","as","is"};
+    vector<string >s2 = {"amazing","leetcode","is"};
+
+    leet_2058::countwords(s1 , s2);
+    leet_2058::official_solu(s1,s2);
+
+    leet_2058::A inst1;                     // default init
+    leet_2058::A* inst2 = new leet_2058::A; //default init
+    leet_2058::A* inst3 = new leet_2058::A(); // value init
 
 
 

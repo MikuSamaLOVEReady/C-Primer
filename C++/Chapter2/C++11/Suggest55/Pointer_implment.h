@@ -20,15 +20,17 @@ private:
 
 
 
+
+/*
 namespace std {
     template<>
-    void swap<Pointer_implment>(
-            Pointer_implment &a, Pointer_implment &b
-    ) noexcept(__and_<is_nothrow_move_constructible<Pointer_implment>, is_nothrow_move_assignable<Pointer_implment>>::value)
+    void swap<Pointer_implment>(Pointer_implment &a, Pointer_implment &b)
+            noexcept(__and_<is_nothrow_move_constructible<Pointer_implment>,
+            is_nothrow_move_assignable<Pointer_implment>>::value)
     {
         return;
     }
 }
-
+*/
 
 #endif //CHAPTER7_POINTER_IMPLMENT_H
