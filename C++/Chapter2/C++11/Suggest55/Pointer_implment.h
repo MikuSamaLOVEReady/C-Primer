@@ -6,12 +6,13 @@
 #define CHAPTER7_POINTER_IMPLMENT_H
 
 #include <vector>
+#include <type_traits>
 
 class Widtett;
 class Pointer_implment {
 
 public:
-    Pointer_implment();
+    Pointer_implment() = default;
 
 private:
     int a,b,c;
@@ -32,5 +33,22 @@ namespace std {
     }
 }
 */
+
+/// interface class
+class Person{
+public:
+    static std::shared_ptr<Person>
+            create();
+
+    virtual ~Person();
+    virtual std::string name() const = 0;
+    virtual std::string birthDate() const = 0;
+};
+
+
+/// ËùÓÐËü¶ÔÓ¦µÄDerived class Ó¦¸ÃÔõÃ´±»¹¹Ôì£¿
+
+
+
 
 #endif //CHAPTER7_POINTER_IMPLMENT_H
