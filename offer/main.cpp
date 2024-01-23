@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include "offer2-41.h"
 #include "offer-25.h"
 //#include "offer-26.h"
@@ -175,6 +176,10 @@ int main() {
     leet_2058::A* inst2 = new leet_2058::A; //default init
     leet_2058::A* inst3 = new leet_2058::A(); // value init
 
+    const char* myStr = "Hello";
+    const char arrstr[] = "hello";
+    size_t length = std::strlen(myStr);
+    std::cout << sizeof arrstr << std::endl;
 
 
     printNumbers2(3);

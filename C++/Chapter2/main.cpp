@@ -173,6 +173,8 @@ void f(const number_& num){
 void f2( number_ num2){
 
     std::cout << num2.mysn << std::endl;
+    string  s1 = "woerofa";
+    s1.size();
 
 }
 
