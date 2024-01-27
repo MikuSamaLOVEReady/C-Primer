@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stack>
 //#include "chapter2.6.h"
 #include "file_1.h"
 #include <string>
@@ -70,6 +71,7 @@
 #include "C++11/Suggest55/Pure_virDef.h"
 #include "C++11/Suggest55/suggTemlateMeth.h"
 #include "C++11/Suggest55/CopyCtr_Sp.h"
+#include "Chapter13/move_test.h"
 
 //""
 std::string globe_str;
@@ -78,6 +80,39 @@ struct Foo
 {
 
 };
+
+move_test v1 , v2;
+
+/// 返回右值
+move_test getVec()
+{
+    move_test m{};
+    return m;
+}
+
+void move_Assign_test()
+{
+    v1 = getVec();          ///move assignment
+    v1 = v2;
+}
+
+void vec_test()
+{
+    vector<int> tes {1,2,3};
+    vector<int> tes2(tes.begin() , tes.begin());
+    if(tes2.empty())
+        std::cout << "woc" << std::endl;
+    //vector<int> tes3(tes.end()+1 , tes.end());
+    //std::cout << "woc" << std::endl;
+}
+
+void BM44_stack_test()
+{
+    stack<int> va;
+
+    ///std::cout << va.top() << std::endl;
+}
+
 
 //const int value;
 void CrunNewFeature(){
@@ -1115,6 +1150,9 @@ int main() {
 
     //std::max()
     pure_vir();
+    move_Assign_test();
+    vec_test();
+    BM44_stack_test();
 
     std::cout <<  "woc !" << std::endl;
     return 0;

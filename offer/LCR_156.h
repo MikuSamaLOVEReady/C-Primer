@@ -7,13 +7,18 @@
 
 #include <string>
 #include <list>
+#include <cstring>
+#include <vector>
+#include "TreeNode.h"
 
+/*
 struct TreeNode {
     int val;
     TreeNode *left;
     TreeNode *right;
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
+ */
 
 class Codec {
 public:
@@ -80,7 +85,23 @@ public:
     }
 
 
+    void st_lenTest()
+    {
+        std::string s1;
+        char dest[std::strlen(s1.c_str()) + 1 ];
+    }
+
+
 };
+
+
+char* cur_str();
+
+std::string cur_str2();
+
+int& getValue();
+
+std::vector<int> getVector();
 
 
 

@@ -34,6 +34,7 @@
 #include "16.h"
 #include "239H.h"
 #include "2058.h"
+#include "LCR_156.h"
 
 
 
@@ -180,6 +181,25 @@ int main() {
     const char arrstr[] = "hello";
     size_t length = std::strlen(myStr);
     std::cout << sizeof arrstr << std::endl;
+
+    list<int> vaa = {1,2,3,4};
+    /// auto& it_lsit = vaa.begin();         /// Non-const lvalue reference 【非常量左值Ref】无法绑定 ---> a temporary of type '_List_iterator<...>' 【】
+    Codec cii{};
+    Codec* ptr_cii = &cii;
+
+    Codec cii_another{};
+    ptr_cii = &cii_another;
+
+    int& ref_lva = getValue();              ///   getValue();
+    ///int
+
+
+
+
+    auto it = std::find(s1.begin() , s1.end() , "leeto");
+    auto res = cur_str();
+    auto sscur = cur_str2();
+
 
 
     printNumbers2(3);
