@@ -8,7 +8,6 @@
 
 //暴力求解 -- 超时
 vector<int> maxSlidingWindow(vector<int>& nums, int k) {
-
     int cur_max = nums[0]; // 初始化最大值为第一个位置上
     vector<int> result = {};
 
@@ -33,7 +32,7 @@ vector<int> maxSlidingWindow2(vector<int>& nums, int k) {
     priority_queue<pair<int,int>> q;
     //先把前k个放入优先队列
     for(int i  = 0 ; i<k ; ++i){
-        q.emplace(nums[i] ,i); //不用make_pair
+        q.emplace(nums[i] ,i); //不用makez_pair
     }
     vector<int> ans = {q.top().first};
     for(int i = k ; i < n; ++i ){
@@ -46,6 +45,19 @@ vector<int> maxSlidingWindow2(vector<int>& nums, int k) {
     }
     return ans;
 }
+
+class one_int_obj{
+
+public:
+    inline one_int_obj(int i) : value(i)
+    {
+
+    };
+
+public:
+    int value;
+
+};
 
 
 

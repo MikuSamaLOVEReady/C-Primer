@@ -4,6 +4,11 @@ project(Chapter7)
 set(CMAKE_CXX_STANDARD 20)
 include_directories(/usr/local/include/eigen3)
 
+file(  GLOB_RECURSE SRC_FILES
+        "${PROJECT_SOURCE_DIR}/*.cpp" "${PROJECT_SOURCE_DIR}/*.h"
+        )
+
+message( ${SRC_FILES} )
 
 add_executable(Chapter7 main.cpp file_1.cpp file_1.h chapter2.6.cpp chapter2.6.h string_chapter3.cpp string_chapter3.h
         multi_array.cpp multi_array.h function.cpp function.h arrays.cpp arrays.h Chapter7/Sales_data.cpp Chapter7/Sales_data.h
@@ -13,4 +18,4 @@ add_executable(Chapter7 main.cpp file_1.cpp file_1.h chapter2.6.cpp chapter2.6.h
         Chapter15/base_and_derive.h Chapter15/inherit.h inherit.cpp Chapter15/virtual_fun.h Chapter15/protected_inherit.h Chapter10/Coursework10_1.h Chapter10/read_only.h Chapter10/send_func_to_Algorithm.h
         Chapter10/Lambda_expression.h Chapter10/bind_parameter.h Chapter12/smart_ptr.h Chapter12/smart_ptr.cpp Chapter15/deCons.h Chapter8/filesteam.h Chapter8/sstream.h Chapter12/dyna_const.h
         Chapter5/exception_test.h Chapter12/deltetor.h
-        Chapter12/trickofSp.h Chapter12/unique.h EgienLearn/Eigen_test.h Tree-Algorithm/KD-Tree.h edabit/QuadraticEquation.h C++11/Variadic_test.h C++11/Variadic_class.h C++11/Extra_nullptr_t.h C++11/InitializeList.h C++11/explicit_more_than_1.h C++11/default+delete.h C++11/Aliastemp.h C++11/Type_Alias.h C++11/decltype_test.h C++11/variadic_printf.h C++11/STLNew/RValue_Ref.h C++11/STLNew/STLhash.h C++11/Suggest55/DefiniVSDeclar.cpp C++11/Suggest55/Pure_virDef.h C++11/Suggest55/Pure_virDef.cpp C++11/Suggest55/suggTemlateMeth.h C++11/Suggest55/suggTemlateMeth.cpp C++11/Suggest55/CopyCtr_Sp.cpp)
+        Chapter12/trickofSp.h Chapter12/unique.h EgienLearn/Eigen_test.h Tree-Algorithm/KD-Tree.h edabit/QuadraticEquation.h C++11/Variadic_test.h C++11/Variadic_class.h C++11/Extra_nullptr_t.h C++11/InitializeList.h C++11/explicit_more_than_1.h C++11/default+delete.h C++11/Aliastemp.h C++11/Type_Alias.h C++11/decltype_test.h C++11/variadic_printf.h C++11/STLNew/RValue_Ref.h C++11/STLNew/STLhash.h C++11/Suggest55/DefiniVSDeclar.cpp C++11/Suggest55/Pure_virDef.h C++11/Suggest55/Pure_virDef.cpp C++11/Suggest55/suggTemlateMeth.h C++11/Suggest55/suggTemlateMeth.cpp C++11/Suggest55/CopyCtr_Sp.cpp Chapter13/swap_opera13_3.h Chapter13/swap_opera13_3.cpp Chapter12/allocator_learn.cpp Chapter12/allocator_learn.h STL_Learn/Priority_learn.h STL_Learn/Priority_learn.cpp C++11/functional_std/functional_test.h C++11/Suggest55/Pointer_implment.cpp init_test.h after_global.h after_global.cpp)

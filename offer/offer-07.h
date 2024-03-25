@@ -13,11 +13,11 @@
 using namespace std;
 std::unordered_map<int , int > inorder_index;
 
-struct TreeNode {
+struct TreeNode_07 {
     int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+    TreeNode_07 *left;
+    TreeNode_07 *right;
+    TreeNode_07(int x) : val(x), left(NULL), right(NULL) {}
 };
 
 TreeNode* build(vector<int>& preorder ,  vector<int>& inorder , int preorder_left ,int preorder_right,

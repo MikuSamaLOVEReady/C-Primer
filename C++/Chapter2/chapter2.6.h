@@ -5,6 +5,7 @@
 #ifndef CHAPTER2_CHAPTER2_6_H
 #define CHAPTER2_CHAPTER2_6_H
 #include <iostream>
+#include "init_test.h"
 
 struct Sales_data{
     //ÉùÃ÷

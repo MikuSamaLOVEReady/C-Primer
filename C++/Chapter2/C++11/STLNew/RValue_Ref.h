@@ -47,7 +47,7 @@ public:
     };
 
     /// move Ctr  &&{ rvalue ref }
-    myMoveStr(myMoveStr&& str) noexcept
+    myMoveStr(myMoveStr&& str ) noexcept
     : _data(str._data) , _len(str._len) //复制原data 和 长度
     {
         ++MCtor;
@@ -76,8 +76,9 @@ public:
             if(_data) delete _data;
             _len = str._len;
             _data = str._data;
+
             str._len = 0;
-            str._data = NULL;
+            str._data = NULL;       /// 移动对象---结束后需要将原data滞空，确保能安全析构
         }
         return *this;
     }
@@ -89,8 +90,6 @@ public:
             delete _data;
         }
     }
-
-
 
 };
 
@@ -110,6 +109,35 @@ void process(int&& i){
 void forward(int&& i){
     std::cout << "FORWARD: int&& i " << i << std::endl;
     process(i); // FIXME： 这里还是会自动按左值传递.....
+}
+
+void recive_value( int vat ){
+
+    std::cout << vat << std::endl;
+}
+
+void receve_value_unique_ptr (  std::unique_ptr<myMoveStr> my_unique )
+{
+
+}
+
+class StrVec{
+public:
+    StrVec(StrVec&& ) noexcept; //移动构造
+    StrVec& operator = (StrVec&& rhs) noexcept;         // 返回一个左值Ref
+
+};
+
+StrVec::StrVec(StrVec &&s ) noexcept {
+
+}
+
+/// what? 不持久、但是
+StrVec& StrVec::operator=(StrVec &&rhs) noexcept {
+    // 明明是一个R ref，但可以获取地址
+    if(this != &rhs){
+
+    }
 
 }
 

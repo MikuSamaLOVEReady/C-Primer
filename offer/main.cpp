@@ -32,8 +32,65 @@
 #include "offer-12.h"
 #include "16.h"
 #include "239H.h"
-
-
+#include "Niuke/BM49.h"
+#include "Hot100/HOT_05.h"
+#include "Hot100/HOT_15.h"
+#include "Hot100/HOT_17.h"
+#include "Hot100/HOT_19.h"
+#include "Hot100/HOT_21.h"
+#include "Hot100/HOT_22.h"
+#include "Hot100/HOT_23.h"
+#include "Hot100/HOT_31.h"
+#include "Hot100/HOT_32.h"
+#include "Hot100/HOT_461.h"
+#include "Hot100/HOT_33.h"
+#include "Hot100/HOT_34.h"
+#include "classics-Alg/BinarySearch.h"
+#include "Hot100/HOT_39.h"
+#include "classics-Alg/Permute.h"
+#include "Hot100/HOT_42.h"
+#include "Hot100/HOT_46.h"
+#include "Hot100/HOT_48.h"
+#include  "Hot100/HOT_49.h"
+#include  "Hot100/HOT_53.h"
+#include "Hot100/HOT_55.h"
+#include "Hot100/HOT_56.h"
+#include "Hot100/HOT_62.h"
+#include "Hot100/HOT_64.h"
+#include "Hot100/HOT_70.h"
+#include "Hot100/HOT_72.h"
+#include "Hot100/HOT_78.h"
+#include "offer-07.h"
+#include "Hot100/HOT_226.h"
+#include "Hot100/HOT_617.h"
+#include "Hot100/HOT_338.h"
+#include "Hot100/HOT_104.h"
+#include "Hot100/HOT_538.h"
+#include "classics-Alg/mid_order.h"
+#include "Hot100/HOT_406.h"
+#include "Hot100/HOT_238.h"
+#include "Hot100/HOT_114.h"
+#include "classics-Alg/pre_order.h"
+#include "Hot100/HOT_136.h"
+#include "Hot100/HOT_208.h"
+#include "Hot100/HOT_105.h"
+#include "Hot100/HOT_96.h"
+#include "Hot100/HOT_236.h"
+#include "Hot100/HOT_312.h"
+#include "Hot100/HOT_739.h"
+#include "Hot100/HOT_647.h"
+#include "Hot100/HOT_102.h"
+#include "classics-Alg/BFS.h"
+#include "Hot100/HOT_448.h"
+#include "Hot100/HOT_206.h"
+#include "Hot100/HOT_92.h"
+#include "Hot100/HOT_169.h"
+#include "Hot100/HOT_309.h"
+#include "Hot100/HOT_148.h"
+#include "Hot100/HOT_121.h"
+#include "Hot100/HOT_283.h"
+#include "Hot100/HOT_160.h"
+#include "Hot100/HOT_287.h"
 
 int negateMinimumInt() {
     long long int value = -2147483648LL;  // Ê¹ÓÃ long long int ÀàÐÍ´æ´¢¸ºÊý
@@ -41,6 +98,15 @@ int negateMinimumInt() {
     return negatedValue;
 }
 
+void erase_test(){
+
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+    auto it = vec.begin();
+    it++;
+    vec.erase(it);
+
+    std::cout << *it << std::endl;
+}
 
 int main() {
 
@@ -164,9 +230,165 @@ int main() {
 
     auto outpp = maxSlidingWindow(test_vec,3);
 
+    //"(12*10-(-104)*20)-2"
+    std::string s_BM49 = "((10+2)*10-(100-204)*10*1*2)-2";
+    std::string s_BM49_2 = "1-2-3";
+    //int va_BM49 = Solution::solve(s_BM49);
+    int va_BM49_2 = Solution::solve(s_BM49_2);
+
+    std::vector<int> vecc_push{};
+    std::vector<one_int_obj> one_vecc{};
+    //vecc_push.push_back(14);            ///  右值引用 底层会启动 move_Ctr 构造出一个真实的Obj
+    one_vecc.push_back(15);
+    std::cout << one_vecc.front().value << "woc !!!! " << std::endl;
+
+    one_int_obj one_int_obj1(15);
+    one_vecc.push_back(one_int_obj1);   /// pass by ref
+
+    Solution_05 s1{};
+    s1.longestPalindrome("wpc");
+
+    unordered_multimap<int , int> multi_test;
+    multi_test.insert(make_pair(16,1));
+    multi_test.insert(make_pair(16,2));
+    multi_test.insert(make_pair(16,3));
+    multi_test.insert(make_pair(5,5));
+
+    auto  itt =  multi_test.find(16);
+    for(auto it = multi_test.begin() ; it != multi_test.end() ; ++it )
+    {
+        if(it->first == 16)
+        {
+            cout << "Key: " << it->first << ", Value: " << it->second << endl;
+        }
+    }
+
+    vector<int> sortest{-1,0,1,2,-1,-4};
+    std::sort(sortest.begin(), sortest.end(), [](int a , int b) {
+        return a > b;
+    });
+    std::sort(sortest.begin(), sortest.end());
+
+    threeSum_real(sortest);
+
+    Solution_17 solu17;
+    solu17.letterCombinations("2");
+
+    Solution_22 solu22;
+    solu22.generateParenthesis(3);
+
+    Solution_31 solu31;
+    vector<int> num = {1,1,5};
+    solu31.nextPermutation(num);
+
+    Solution_32 solu32;
+    string s_32 = "(()())";
+    //solu32.longestValidParentheses_WRONG(s_32);
+    solu32.longestValidParentheses(s_32);
+
+    Solution_33 solu33{};
+    vector<int> nun{1};
+    solu33.search(nun , 0);
+
+    Solution_34 solu34{};
+    vector<int> nun_34{5,7,7,8,8,10};
+    solu34.searchRange( nun_34 , 6 );
+
+    Solution_LCR_083 solu_LCR83{};
+    vector<int> nun_83{1,2,3};
+    solu_LCR83.permute(nun_83);
+
+    int vaa = 2;
+    int va_next = vaa & 1;
+
+    Solution_42 solu42{};
+    vector<int> num_42{0,1,0,2,1,0,1,3,2,1,2,1};
+    solu42.trap(num_42);
+
+    Solution_49 solu49{};
+    vector<string> s_49{"eat","tea","tan","ate","nat","bat"};
+    vector<string> s_49_1{"","b"};
+    vector<string> s_49_2{"",""};
+    vector<string> s_49_3{"","b",""};
+    vector<string> s_49_4{ "and","dans" };
+    solu49.groupAnagrams(s_49_4);
+    erase_test();
+
+    Solution_62 solu62{};
+    int va_62 = solu62.uniquePaths_TimeOut(3,7);
+    int va_62_2 = solu62.uniquePaths(23,12);
+    int va_64_3 = solu62.uniquePaths_Cmn(3,7);
+
+    long long att = 1515;
+    int vava_long = att;
+
+    Solution_64 solu64{};
+    vector<vector<int>> test_64;
+    vector<int> te_64{1,2,3};
+    vector<int> te_64_1{4,5,6};
+    //vector<int> te_64_2{4,2,1};
+    test_64.push_back(te_64);
+    test_64.push_back(te_64_1);
+    //test_64.push_back(te_64_2);
+    int va_64 = solu64.minPathSum(test_64);
+
+    Solution_70 solu70{};
+    solu70.climbStairs(3);
+
+    Solution_72 solu72{};
+    string s1_72{"intention"} , s2_72("execution");
+    solu72.minDistance(s1_72 , s2_72);
+
+    Solution_78 solu78{};
+    vector<int> vec_78{1,2,3};
+    solu78.subsets(vec_78);
+
+    //Solution_226 solu226{};
+    //solu226.invertTree();         ///
+
+    Solution_338 solu338{};
+    solu338.countBits(5);
+
+    Solution_238 solu238{};
+    vector<int> vec_238{4,3,2,1,2};
+    solu238.productExceptSelf(vec_238);
+
+    Solution_105 solu105{};
+    vector<int> vec_pre{1,2};
+    vector<int> vec_in {1,2};
+    auto res = solu105.buildTree(vec_pre , vec_in);
+
+    Solution_96 solu96{};
+    solu96.numTrees(3);
+
+    Solution_312 solu312{};
+    vector<int> vec_312{3,1,5,8};
+    solu312.maxCoins(vec_312);
+
+    Solution_739 solu739{};
+    vector<int> vec_739{30 , 40 , 50 ,60};
+    solu739.dailyTemperatures(vec_739);
+
+    Solution_647 solu647{};
+    string st_647{"aaa"};
+    solu647.countSubstrings(st_647);
+
+    Solution_BFS soluBfs{};
+    soluBfs.levelOrder(nullptr);
+
+    Solution_448 solu448{};
+    vector<int> vec_448{4,3,2,7,8,2,3,1};
+    solu448.findDisappearedNumbers(vec_448);
+
+    Solution_283 solu223{};
+    vector<int> vec_223{0,1,0,3,12};
+    solu223.moveZeroes(vec_223);
+
+    /// ACM 输入training
 
 
 
+    std::cout << "stock";
     printNumbers2(3);
     //-2^31 ÊÇÕûÊýµÄ×îÐ¡Öµ£¬¼´ -2147483648£¬Ëü¿ÉÒÔÔÚ int ÀàÐÍÖÐ×¼È·µØ±íÊ¾¡£Í¬Ñù£¬2^31-1 ÊÇÕûÊýµÄ×î´óÖµ£¬¼´ 2147483647
     return 0;

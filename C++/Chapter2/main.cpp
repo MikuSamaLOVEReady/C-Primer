@@ -51,6 +51,7 @@
 #include "C++11/Variadic_test.h"
 #include "C++11/Variadic_class.h"
 #include "C++11/Extra_nullptr_t.h"
+#include "C++11/functional_std/functional_test.h"
 #include <unordered_map>
 #include "C++11/InitializeList.h"
 //#include <tuple>
@@ -70,6 +71,13 @@
 #include "C++11/Suggest55/Pure_virDef.h"
 #include "C++11/Suggest55/suggTemlateMeth.h"
 #include "C++11/Suggest55/CopyCtr_Sp.h"
+#include "Chapter13/swap_opera13_3.h"
+#include "Chapter12/allocator_learn.h"
+#include <queue>
+#include "STL_Learn/Priority_learn.h"
+#include "init_test.h"
+#include "after_global.h"
+
 
 //""
 std::string globe_str;
@@ -212,6 +220,83 @@ void pure_vir(){
 
 }
 
+void f_swap_opear(){
+
+    Foo_op13 f1 , f2;
+    swap(f1,f2);
+
+    allocator<std::string> alloc;                           ///通过对象返回一个 指针？
+    std::string* const p = alloc.allocate(10);           /// 指向分配的空间头部
+    auto q = p;                                     /// q
+    //alloc.
+    //alloc.construct()
+    // alloc.deallocate(p , size) // *p 、size n    [p必须是allocate返回的ptr]
+    // alloc.
+
+
+    std::string ssss = "001";
+    int vava = 51;
+    const int& ref = 14;                      // non-const lvalue reference to type 'int'
+    const int& reff2 = vava * 6;              //
+    int var = std::stoi(ssss);
+
+    int itt = 42;
+    // 右值 Ref
+    //int&& r_ref = itt;
+    //int& l_ref = itt * 8;                 /// [left ref 无法绑定表达式计算结果，计算结果可能是临时的、匿名的] non-const lvalue reference to type 'int' cannot bind to a temporary of type 'int'
+    int&& r_ref = itt * 8;
+    //int&& r_ref_2 = r_ref;                  /// 变量(r_ref)都是左值、无法让右值绑定它
+
+    int&& rr3 = std::move(r_ref);           /// r_ref 变得没有意义、不能再使用它的值
+}
+
+struct Enetity
+{
+    int x , y;
+};
+
+void type_punning() {
+
+    int a = 50;
+    double value = a;                                                        /// implicity conversion
+    Enetity e = {5,7};
+    int* position = (int*)&e;
+    std::cout << position[0] << " c " <<  position[1] << std::endl;         /// &获取Address 后 （pointer2*） cast一下
+
+    std::cout << sizeof(int) << std::endl;
+    std::cout << sizeof(double) << std::endl;                               /// 以字节的形式打印
+
+    double vv = 145.6235;
+    std::cout << static_cast<int>(vv) << std::endl;
+};
+
+void priority_test()
+{
+    Priority_sigton_learn* ptr = Priority_sigton_learn::getInstance();
+    const initializer_list<int> data = {1, 8, 5, 6, 3, 4, 0, 9, 7, 2};
+    for(int val : data)
+    {
+        Priority_sigton_learn::q_1.push(val);
+        Priority_sigton_learn::q_2.push(val);
+    }
+
+    std::cout << "从大到小: " <<  Priority_sigton_learn::q_1.top() << std::endl;
+    std::cout << "从小到大: " <<  Priority_sigton_learn::q_2.top() << std::endl;
+}
+
+void alloca_test(){
+    //分离 空间分配 和 具体构造
+
+}
+
+void use_queue(){
+    queue<int> var;
+    var.push(12);
+    var.front();
+    var.pop();
+}
+
+
 void setdeclTest(){
     //std::set<int , decltype(cmp)> coll(cmp);
 
@@ -235,6 +320,16 @@ void setdeclTest(){
     //std::complex<int>
     myMoveStr mmsrt = myMoveStr();
     forward(15);
+
+    int vav = 155;
+    int&& va_right_ref = vav *15;                // 右值引用
+    const int& va_left_ref = va_right_ref;       // 延长右值引用的寿命
+    recive_value( std::move(vav) );         // trivially-copyable 是指可以通过简单copy 来完成移动
+
+    std::unique_ptr<myMoveStr> ptr{};
+    receve_value_unique_ptr(std::move(ptr));
+
+
 }
 
 void hash_test(){
@@ -1113,6 +1208,15 @@ int main() {
 
     //std::max()
     pure_vir();
+    f_swap_opear();
+    type_punning();
+    priority_test();
+    bind_test();
+
+    init_test::no_def node;
+
+    std::cout << "GLOABLLLL: " << ::global_va << "GLOBAL: " << std::endl;
+    after_gl::print();
 
     std::cout <<  "woc !" << std::endl;
     return 0;
