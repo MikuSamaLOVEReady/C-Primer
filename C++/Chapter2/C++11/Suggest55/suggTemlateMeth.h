@@ -22,6 +22,7 @@ public:
         std::cout << "befor"  << std::endl; // 可以把一些上锁(统一的操作)
         dealValue();
         std::cout << "after"  << std::endl; // 关锁的操作放在这
+        return -1;
     }
 
     int getHeathValue() const {
@@ -31,6 +32,7 @@ public:
 private:
     virtual int dealValue() const{
         std::cout << "Game" << std::endl;
+        return 1;
     }
 
     HeathFuncPtr heaFuc;
@@ -43,6 +45,7 @@ public:
 private:
     int dealValue() const override{
         std::cout << "Ennemy" << std::endl;
+        return 1;
     }
 
 };

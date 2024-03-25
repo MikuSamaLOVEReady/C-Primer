@@ -40,7 +40,7 @@ number_ &number_::operator = (const number_ &ref)
     ps = new_ps;       // ref 与 当前可能指向同一个地方，但上一步给删掉了
 
     std::cout << "Assign Ctr" << std::endl;
-    this->mysn = random();
+    //sthis->mysn = random();
     return *this;
 }
 

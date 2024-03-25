@@ -21,16 +21,18 @@ private:
 
 
 
+
+/*
 namespace std {
     template<>
-    void swap<Pointer_implment>(
-            Pointer_implment &a, Pointer_implment &b
-    ) noexcept(is_nothrow_move_constructible<Pointer_implment>::value && is_nothrow_move_assignable<Pointer_implment>::value)
+    void swap<Pointer_implment>(Pointer_implment &a, Pointer_implment &b)
+            noexcept(__and_<is_nothrow_move_constructible<Pointer_implment>,
+            is_nothrow_move_assignable<Pointer_implment>>::value)
     {
         return;
     }
 }
-
+*/
 
 /// interface class
 class Person{
