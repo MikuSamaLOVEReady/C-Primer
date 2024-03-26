@@ -282,8 +282,8 @@ int main() {
     one_int_obj one_int_obj1(15);
     one_vecc.push_back(one_int_obj1);   /// pass by ref
 
-    Solution_05 s1{};
-    s1.longestPalindrome("wpc");
+    ///Solution_05 s1{};
+    //s1.longestPalindrome("wpc");
 
     unordered_multimap<int , int> multi_test;
     multi_test.insert(make_pair(16,1));
@@ -335,8 +335,8 @@ int main() {
     vector<int> nun_83{1,2,3};
     solu_LCR83.permute(nun_83);
 
-    int vaa = 2;
-    int va_next = vaa & 1;
+    ///int vaa = 2;
+    ///int va_next = vaa & 1;
 
     Solution_42 solu42{};
     vector<int> num_42{0,1,0,2,1,0,1,3,2,1,2,1};
@@ -393,7 +393,7 @@ int main() {
     Solution_105 solu105{};
     vector<int> vec_pre{1,2};
     vector<int> vec_in {1,2};
-    auto res = solu105.buildTree(vec_pre , vec_in);
+    //auto res = solu105.buildTree(vec_pre , vec_in);
 
     Solution_96 solu96{};
     solu96.numTrees(3);

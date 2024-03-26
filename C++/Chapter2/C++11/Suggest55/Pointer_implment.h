@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <type_traits>
+#include <memory>
 
 class Widtett;
 class Pointer_implment {
