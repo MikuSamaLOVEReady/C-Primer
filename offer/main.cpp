@@ -374,7 +374,7 @@ int main() {
 
     Solution_72 solu72{};
     string s1_72{"intention"} , s2_72("execution");
-    solu72.minDistance(s1_72 , s2_72);
+    //solu72.minDistance(s1_72 , s2_72);
 
     Solution_78 solu78{};
     vector<int> vec_78{1,2,3};
@@ -421,7 +421,12 @@ int main() {
     vector<int> vec_223{0,1,0,3,12};
     solu223.moveZeroes(vec_223);
 
+    Solution_287 solu287{};
+    vector<int> vec_287{  1,3,4,2,2};
+    solu287.findDuplicate(vec_287);
+
     /// ACM 输入training
+
 
 
 
