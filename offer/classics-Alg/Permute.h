@@ -67,7 +67,34 @@ public:
 
 
 
+    /// 4.3 permute review
+    vector<vector<int>> total_res;
+    vector<int> res_review;
+    void dfs_permute_review(vector<int>& nums , vector<bool>& Onpath )
+    {
 
+        for( int i = 0 ; i<Onpath.size() ; i++ ) {
+            if( !Onpath[i] ){
+                Onpath[i] = true;
+                res_review.push_back(nums[i]);
+                dfs_permute_review(nums, Onpath);
+                res_review.pop_back();
+                Onpath[i] = false;
+            }
+        }
+
+        /// 所有元素都选过了
+        if(res_review.size() == nums.size()) {
+            total_res.push_back(res_review);
+        }
+        return;
+    }
+
+    vector<vector<int>> permute_review(vector<int>& nums) {
+        vector<bool> OnPath( nums.size() , false);
+        dfs_permute_review(nums , OnPath);
+        return total_res;
+    }
 
 
 

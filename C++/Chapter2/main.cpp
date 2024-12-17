@@ -12,6 +12,8 @@
 #include "arrays.h"
 #include "effective/chapter-0.h"
 #include <unordered_set>
+#include "Unordered/unordered_map.h"
+#include "Unordered/unordered_set.h"
 #include <map>
 #include "Chapter11/associative-container.h"
 #include "Chapter7/Sales_data.h"
@@ -55,6 +57,7 @@
 #include "C++11/functional_std/functional_test.h"
 #include <unordered_map>
 #include "C++11/InitializeList.h"
+#include "Chapter11/unordered_(multi)map.h"
 //#include <tuple>
 #include <array>
 #include "C++11/default+delete.h"
@@ -78,16 +81,225 @@
 #include "STL_Learn/Priority_learn.h"
 #include "init_test.h"
 #include "after_global.h"
+#include "C++11/smart_ptr/recursive_shared_ptr.h"
 
 #include "Chapter13/move_test.h"
+#include "STL_Learn/std_functionLearn.h"
+#include  "Chapter12/My_Sp.h"
+#include "C++20/Chpter19/func_ptr.h"
+#include "C++20/Chpter19/call_back_learn.h"
+#include "C++20/Chpter19/functor_learn.h"
+#include <functional>
+#include "effective/rules_09.h"
+#include "C++20/Chpter16/excp_test.h"
+#include "Chapter7/Data.h"
+#include "YuanRon/M1.h"
+#include "C++11/decltype_test.h"
 
+void excp_test(){
+    morden_20::exptest1(15);
+}
+
+
+void  memo_alloc(){
+    int* p = (int*)malloc(4);   /// 分配内存但不初始化
+    cout<< p[0] << " " << p[1] << " " << p[2] << " " << p[3] << endl;
+    free(p);
+    p = (int*)calloc(4, 1); /// 4个size = 1的空间 初始化为0？？？
+    cout<< p[0] << " " << p[1] << " " << p[2] << " " << p[3] << endl;
+    /// free(p);
+    /// p = (int*)realloc(p,8);
+    p = (int*)realloc(p , 8);
+    cout<< p[0] << " " << p[1] << " " << p[2] << " " << p[3] <<  " " << p[4] << " " << p[5] << " " << p[6] << " " << p[7]<< endl;
+
+}
+
+void effec_09(){
+    {
+        effective_09::derive d;
+    }
+}
+
+void un_map_learn(){
+    un_map::unorder_interface();
+}
+
+void struc_inher(){
+    te1_derive t1{};
+    t1.der_print();
+}
+
+void cla_inher(){
+    cl_derive te1;
+    /// te1.prt();
+
+}
+
+void rvalueRef_lifetime(){
+    int count{5};
+    {
+        int&& rtemp { count + 3 };
+    }
+    //cout << rtemp << endl;
+    int va = 10;
+
+    shared_ptr<int> sp1 = make_shared<int>( va );
+    cout << " sp1_count " << sp1.use_count() << endl;
+
+    shared_ptr<int> sp2 = make_shared<int>( va );
+     // delete va;
+     // free(&va); 在stack 上分配   、free不起作用 [操作未定义]
+    cout << " sp1_count " << sp1.use_count() << endl;   ///
+    cout << " sp2_count " << sp2.use_count() << endl;
+}
+
+long fcc(long* , int){
+    std::cout << "woc! "  << std::endl;
+    return 1;
+}
+
+bool cmpSTR( const std::string& s1 , const std::string& s2 ){
+
+   return true;
+}
+
+
+void func_tpr_test() {
+
+    /// Definition only
+    long (*fun_ptr) (long* , int);
+
+    /// Definition & initialize
+    long (*fun_ptr2) (long* , int) { fcc };
+
+    ///
+    auto fun_ptr3 = fcc;
+    fun_ptr = fuc1_ptr;
+
+    /// Comparison_ptr<std::string> cm_ptr = cmpSTR;
+    Comparison_ptr<std::string> cm_ptr { cmpSTR };
+
+    Less less;
+    const bool is_less = less( 5, 6 ); /// useless
+
+    std::less<> less_fuctor;
+    std::greater<> greater_func;
+
+    {
+        char buffer[1024]; /// 也分配在stack上
+    }
+
+    std::cout << "wic" << std::endl;
+
+};
+
+void sp_test(){
+
+    std::shared_ptr<Foo> sptr = std::make_shared<Foo>(100);
+
+    std::cout << "Foo::bar = " << sptr->getBar() << ", use_count() = "
+              << sptr.use_count() << '\n';
+
+    std::shared_ptr<Foo> sptr2 = sptr;
+    std::cout << "sptr2: use_count() = " << sptr.use_count() << std::endl;
+    // Reset the shared_ptr without handing it a fresh instance of Foo.
+    // The old instance will be destroyed after this call.
+    std::cout << "call sptr.reset()...\n";
+    sptr.reset(); // calls Foo's destructor here
+    std::cout << "After reset(): use_count() = " << sptr.use_count() << std::endl;
+    sptr2.reset();
+    std::cout << "After reset(): use_count2() = " << sptr2.use_count() << std::endl;
+
+    Foo f1{100};
+    const Foo& cRef = f1;
+    Foo f2(std::move(cRef));        /// 无效move
+    // f2 =  ;   /// ==   , 调用copy Ctr
+
+}
+
+
+
+void and_oprat( int n ){
+
+    int count = 0;
+    while ( n ){
+        count++;
+        n = n & n-1;
+    }
+
+    std::cout << " woc " << std::endl;
+}
+
+void struct_test(){
+    SomeData s1;
+    SomeData::print();
+
+    SomeDataB sb{};
+    SomeData& d = sb;
+    // shared_ptr<SomeData2> d2 {SomeData2::Create()};
+    /// shared_ptr<SomeData3> sd3 = std::make_shared<SomeData3>();
+    SomeData3 sd3 = SomeData3();
+
+
+    // d2->NeedCallSome();
+    // sd3.NeedCallSome();
+    /// SomeDataB obj = SomeDataB();
+
+    d.display();
+
+}
+
+void wek_ptr_learn(){
+
+    int va = 10;
+    std::shared_ptr<int>  va_sp = std::make_shared<int>(va);
+    std::weak_ptr<int> wk_ptr();        /// 空
+    std::weak_ptr<int> wk_ptr2(va_sp);
+
+    std::cout << va_sp.use_count() << " weak gen share" << std::endl;   /// weak 不增加count_但 lock可以增加
+    if( !wk_ptr2.expired())
+    {
+        shared_ptr<int> ptr = wk_ptr2.lock();
+        std::cout << "NOT EXPIRE" << std::endl;
+    }
+
+    std::cout << va_sp.use_count() << " weak gen share" << std::endl;
+}
+
+void share_ptr_incres(){
+
+    static int vv;
+    std::cout << vv << "VVVV" << std::endl;
+
+    int va = 10;
+    std::shared_ptr<int>  va_sp = std::make_shared<int>(va);
+    va_sp.use_count();
+    int* va_ptr = va_sp.get();  /// 返回一个复制品指针
+    std::cout << "va_sp " << va_sp.use_count() << std::endl;
+    /// 用 get() 返回的指针构造sp 不会增加计数
+    std::shared_ptr<int>  va_copy_sp(va_ptr);
+    std::cout << "va_copy_sp " << va_copy_sp.use_count() << std::endl;
+
+    wek_ptr_learn();
+    /// va_sp.get() 退stack的时候会发生 doule free 、 并且引用计数不增加
+}
+
+
+
+void recursive_smart() {
+    std::shared_ptr<smart_learn::A> a = make_shared<smart_learn::A>();
+    std::shared_ptr<smart_learn::B> b = make_shared<smart_learn::B>();
+    std::weak_ptr<smart_learn::A>  wek_ptr = a;
+    std::cout << " before A " << a.use_count() << " B " << b.use_count() << endl;
+
+    b->ptr_A = a;
+    a->ptr_B = b;
+    std::cout << " before A " << a.use_count() << " B " << b.use_count() << endl;
+};
 //""
 std::string globe_str;
 int global_int; //“0”
-struct Foo
-{
 
-};
 
 move_test v1 , v2;
 
@@ -395,6 +607,8 @@ void STL_Lear01(){
 
 
 int main() {
+
+    struct_test();
     //用的是一个const值
     std::cout << val <<std::endl;
 
@@ -453,7 +667,7 @@ int main() {
     //常量ref 可以指向一个 非常量
     int i3 = 325;
     int &rr = i3;
-    const int &rl = i3;
+    const int &rl = i3; ///
     //rl = 755;
 
     //
@@ -1252,11 +1466,57 @@ int main() {
     type_punning();
     priority_test();
     bind_test();
+    struct_test();
+    int va_andOP = 3;
+    and_oprat(va_andOP);
+
+    //
+    //wek_ptr_learn();
+    //share_ptr_incres();
+
+    //functio_learn();
 
     init_test::no_def node;
+    EMPTY e1;
+    std::cout << "EMPTY SIZE: " << sizeof(e1) << std::endl;
+
+    rvalueRef_lifetime();
 
     std::cout << "GLOABLLLL: " << ::global_va << "GLOBAL: " << std::endl;
     after_gl::print();
+    recursive_smart();
+    sp_test();
+    func_tpr_test();
+    struc_inher();
+    cla_inher();
+    un_map_learn();
+    effec_09();
+    memo_alloc();
+    excp_test();
+
+    const this_ptrTest const_obj1;
+    const_obj1.printANS();
+
+    int coun_re = 5;
+    //int&& rva_ref_coutn = coun_re ;     /// 右值引用无法绑定左值
+    int aa =10;
+
+    int vv_1 = aa++;
+    int vv_2 = ++aa;
+    unordered_map_VS_unordered_Multimap::insert_ALL_MAP_test();
+    unordered_map_VS_unordered_Multimap::insert_ALL_SET_test();
+
+    //setTest();
+
+//    if(typeid(typename std::iterator_traits<vector<>>))
+
+    std::cout << sizeof(m1::A) << std::endl;
+    std::cout << sizeof(m1::B) << std::endl;
+    std::cout << sizeof(m1::C) << std::endl;
+    std::cout << sizeof(m1::D) << std::endl;
+    m1::smartPtr_get_test();
+    bind_learn();
+    mutable_test();
 
     std::cout <<  "woc !" << std::endl;
     return 0;

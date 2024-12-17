@@ -5,6 +5,8 @@
 #ifndef OFFER_HOT_236_H
 #define OFFER_HOT_236_H
 
+/// 二叉树的最近公共祖先 【普通二叉成树】 没有顺序
+///
 class Solution_236 {
 public:
 
@@ -45,4 +47,13 @@ public:
 
 };
 
+
+class Solution_236_2 {
+public:
+
+    /// 先用DFS 把路线存起来
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+
+    }
+};
 #endif //OFFER_HOT_236_H

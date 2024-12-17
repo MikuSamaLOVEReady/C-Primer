@@ -31,15 +31,11 @@ void MergeArray(vector<int>& nums , int left , int right , int mid){
     }
 
     //如果有数组用完了，则开始把剩下的合并
-    //这下面两个if都是多余的
         while(j <= right){
             nums[k] = temp[j];
             j++;
             k++;
         }
-
-    //这可直接改成else么？
-
         while( i < mid+1){
             nums[k] = temp[i];
             i++;

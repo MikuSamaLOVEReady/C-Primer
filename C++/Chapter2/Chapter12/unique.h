@@ -33,7 +33,7 @@ void unique_base(){
     //std::cout << "woc!!!! " << *mystr << std::endl;
 }
 
-//返回一个对象
+//返回一个对象 , 底层调用了std::move , move本身是将左值转换成右值应用啊
 unique_ptr<int> copy_unique(int p){
     unique_ptr<int> ret(new int(p));
     return ret;

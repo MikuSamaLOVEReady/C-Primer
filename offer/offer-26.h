@@ -5,6 +5,7 @@
 #ifndef OFFER_OFFER_26_H
 #define OFFER_OFFER_26_H
 
+#include <vector>
 struct TreeNode {
     int val;
     TreeNode *left;

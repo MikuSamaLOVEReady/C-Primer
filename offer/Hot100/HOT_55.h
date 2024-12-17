@@ -14,7 +14,7 @@ public:
     bool canJump(vector<int>& nums) {
 
         int dp = 0;         /// 记录当前所能到达的最远index
-        for(int i = 0 ; i<nums.size() ; i++) {
+        for(int i = 0 ; i<nums.size() ; i++) { /// i更像是一个追赶目标的界限，不断在前进
             if(i > dp ) return false;
             else {
                 dp = max(dp , i+nums[i]);

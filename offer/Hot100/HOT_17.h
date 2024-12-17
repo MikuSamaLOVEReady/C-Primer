@@ -54,7 +54,7 @@ public:
         vector<string> str_groups;
         for(const char ch : digits)
         {
-            string str = str_dict.at(ch);
+            string str = str_dict.at(ch);   /// 如果没找到会抛出异常 、最好还是用find吧
             str_groups.push_back(str);
         }
 

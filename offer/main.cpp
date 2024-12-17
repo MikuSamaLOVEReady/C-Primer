@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <numeric>
 #include "offer2-41.h"
 #include "offer-25.h"
 //#include "offer-26.h"
@@ -96,6 +97,50 @@
 #include "Hot100/HOT_283.h"
 #include "Hot100/HOT_160.h"
 #include "Hot100/HOT_287.h"
+#include "Hot100/HOT_141.h"
+#include "Hot100/HOT_198.h"
+#include "Hot100/HOT_101.h"
+#include "Hot100/HOT_300.h"
+#include "Design_Patterns/Factory_learn.h"
+#include "Hot100/HOT_347.h"
+#include "heapAndStack/Heap_imp.h"
+#include "Hot100/HOT_215.h"
+#include "Hot100/HOT_98'.h"
+#include "Hot100/HOT_142.h"
+#include "Hot100/HOT_332.h"
+#include "Hot100/HOT_234.h"
+#include "Hot100/HOT_75.h"
+#include "GigBits/54_LuoXuanMatrix.h"
+#include "GigBits/63_Mid_difPath.h"
+#include "GigBits/157_OrderSequence.h"
+#include "GigBits/tiankong.h"
+#include "Design_Patterns/Observers.h"
+#include "Design_Patterns/share_mode.h"
+#include "Hot100/HOT1277.h"
+#include "Hot100/DP_416.h"
+#include "Hot100/HOT_322.h"
+#include "Hot100/HOT_518.h"
+#include "Hot100/HOT_377.h"
+#include "Hot100/HOT_486.h"
+#include "Hot100/HOT_464.h"
+#include "Hot100/HOT_437.h"
+#include "Hot100/HOT_560.h"
+#include "Hot100/HOT_581.h"
+#include "classics-Alg/insert_sort.h"
+#include "Hot100/HOT_337.h"
+
+#include "huawei/full_binary_serach_tree.h"
+#include "Hot100/HOT_240.h"
+#include "HW/HW_4_24.h"
+#include "MT/MT_2024_4_13_01.h"
+#include "Hot100/HOT_303.h"
+#include "CPU_Eyes/Chapter4_1.h"
+
+void te(){
+
+    istringstream_learn();
+
+}
 
 int negateMinimumInt() {
     long long int value = -2147483648LL;  // Ê¹ÓÃ long long int ÀàÐÍ´æ´¢¸ºÊý
@@ -103,8 +148,8 @@ int negateMinimumInt() {
     return negatedValue;
 }
 
+/// ?？？
 void erase_test(){
-
     std::vector<int> vec = {1, 2, 3, 4, 5};
     auto it = vec.begin();
     it++;
@@ -113,9 +158,92 @@ void erase_test(){
     std::cout << *it << std::endl;
 }
 
+
+///ACM testing
+void test_06(){
+    int rows = 0;
+    while(cin >> rows){
+            int count = 0;
+            while ( cin >> count ){
+                int cur = 0;
+                int sum = 0;
+                while(count--){
+                    cin >> cur;
+                    sum += cur;
+                }
+
+                rows--;
+                cout << sum <<endl;
+
+                if(rows != 0){
+                    cout << endl;
+                }
+                else{
+                    break;
+                }
+            }
+    }
+}
+
+unordered_map<string , function<Design_video::AbstractFactory*()>> m_factory {
+        {"Circle" , []() { return new Design_video::CircleFactory(); }},
+        {"Square" , []() { return new Design_video::SquareFactory(); }}
+};
+void Factory_test() {
+
+    int producttime ;
+    std::cin >> producttime;
+
+    string s;
+    int    num;
+    Design_video::AbstractFactory* factory; /// 在stack上
+    vector<Design_video::IShape*> shpes;
+    /// Design_video::AbstractFactory cur_fac
+    while( cin >> s >> num ){
+       factory = m_factory[s]();
+       for( int i = 0 ; i<num ;++i){
+           shpes.push_back(factory->CreateShape());
+       }
+    }
+
+    for( auto it = shpes.begin() ; it != shpes.end() ;++it){
+        (*it)->draw();
+    }
+}
+
+/// flyweitght test
+void flyTest(){
+
+    string obj_name;
+    int posx , posy;
+    Flyweight_factory fac{};
+    while(  cin >> obj_name >> posx >> posy )
+    {
+        auto ptr = fac.getFlyweight(obj_name);
+        ptr->operation(posx , posy);
+    }
+
+}
+
+
+/// 吉比特笔试
+void Gig_01(){
+    char s[] = "abcdefghijk";
+    int p = 9;
+    /// std::cout << h(s, cal(s), 0, p) << "wod" << endl;
+
+    ///02
+    int va  = f(127);
+    int a = 128;
+    int b = -128;
+    int va2 =  a & b;
+
+}
+
 int main() {
 
     std::vector<std::vector<int*>> vec1(10, std::vector<int*>(10, nullptr));
+    // flyTest();
     /*
     int t=0;
     while(true){
@@ -425,12 +553,102 @@ int main() {
     vector<int> vec_287{  1,3,4,2,2};
     solu287.findDuplicate(vec_287);
 
+    Solution_300 solu300{};
+    vector<int> vec_300{7,7,7,7,7,7,7};
+    solu300.lengthOfLIS( vec_300 );
+
+    Solution_347 solu347{};
+    vector<int> vec_347{4,1,-1,2,-1,2,3};
+    solu347.topKFrequent(vec_347 , 2);
+
+    Solution_215 solu215{};
+    vector<int> vec_215{3,2,3,1,2,4,5,5,6};
+    solu215.findKthLargest(vec_215 , 4);
+
+    vector<int> vec_Quick{3,2,1,5,6,4};
+    int vaa_quick = QuickSelect(vec_Quick , 0 , 5 , 4);
+
+    /// Solution_98 solu98{};
+    Solution_332 solu_332{};
+    vector<int> vec_332{288,160,10,249,40,77,314,429};
+    solu_332.coinChange(vec_332 , 9208);
+
+
+    Solution_Gigbits54 soluGib54{};
+    vector<vector<int>>  matrix54;
+    vector<int> v1_54{1,2,3,4};
+    vector<int> v2_54{5,6,7,8};
+    vector<int> v3_54{9,10,11,12};
+    matrix54.push_back(v1_54);
+    matrix54.push_back(v2_54);
+    matrix54.push_back(v3_54);
+    soluGib54.spiralOrder(matrix54);
+
+    vector<vector<int>> matrix ={
+            {1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}
+    };
+    bool var = searchMatrix(matrix , 14);
+
+
+    vector<int> v_test{2,6,4,8,10,9,15};
+    Solution_581 solu581{};
+    solu581.findUnsortedSubarray(v_test);
+
+    vector<int> v_test2{2,6,4,8};
+    inser_sort(v_test2);
+    /// Gig test
+    Gig_01();
+
+
+    /// design patern
+    /// Factory_test();
+
+    ///Observer test
+    /* MIKUSubject* m_s = new MIKUSubject();
+    LRDObserver* lrd_obs = new LRDObserver();
+    LSAMAObserver* lsam_obs = new LSAMAObserver();
+    m_s->RegisterObserver(lrd_obs);
+    m_s->RegisterObserver(lsam_obs);
+
+    m_s->notifyObservers();
+    m_s->RemoveObserver(lrd_obs);
+    m_s->notifyObservers(); */
+
+    //std::shared_ptr<observer> ob_sp = std::make_shared<student>("woc");
+    //std::shared_ptr<Clock> c = std::make_shared<Clock>(0);
+
+
+    //Design_video::Circle c_123{};
+    //Design_video::Circle& obk = c_123;
+
     /// ACM 输入training
+    // test_06();
+    /// te();
+
+//    int cur_va;
+//    string str;
+//    while( getline(std::cin , str) ){
+//        int target = 0;
+//        cin >> target;
+//
+//        std::istringstream iss(str);
+//        int dat;
+//        while( iss >> dat ) {
+//
+//        }
+//    }
 
 
+//    MT::goo_matrix();
+    chap4_1::A a;
+    a.mFunc();
+    std::cout << a.func((long)&a) << std::endl;
+
+    chap4_1::A* base_a = new chap4_1::B();
+    base_a->func(444); /// 只有虚函数才会
+    base_a->func_b();
 
 
-    std::cout << "stock";
     printNumbers2(3);
     //-2^31 ÊÇÕûÊýµÄ×îÐ¡Öµ£¬¼´ -2147483648£¬Ëü¿ÉÒÔÔÚ int ÀàÐÍÖÐ×¼È·µØ±íÊ¾¡£Í¬Ñù£¬2^31-1 ÊÇÕûÊýµÄ×î´óÖµ£¬¼´ 2147483647
     return 0;

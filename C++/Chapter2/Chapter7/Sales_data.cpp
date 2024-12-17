@@ -3,9 +3,12 @@
 //
 
 #include "Sales_data.h"
+#include "Data.h"
 
+//const double Example::va_2 = 16.3f; ///÷ÿ∏¥∂®“Â
 Sales_data add(const Sales_data& , const Sales_data&){
     std::cout<< "this is add function" << std::endl;
+    std::cout << Example::va_2 << std::endl;
 }
 
 std::ostream& print(std::ostream& str, const Sales_data& data){

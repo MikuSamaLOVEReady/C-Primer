@@ -32,6 +32,6 @@ add_executable(Chapter7 main.cpp file_1.cpp file_1.h chapter2.6.cpp chapter2.6.h
         C++11/explicit_more_than_1.h C++11/default+delete.h C++11/Aliastemp.h C++11/Type_Alias.h C++11/decltype_test.h C++11/variadic_printf.h C++11/STLNew/RValue_Ref.h C++11/STLNew/STLhash.h C++11/Suggest55/DefiniVSDeclar.cpp C++11/Suggest55/Pure_virDef.h
         C++11/Suggest55/Pure_virDef.cpp C++11/Suggest55/suggTemlateMeth.h C++11/Suggest55/suggTemlateMeth.cpp C++11/Suggest55/CopyCtr_Sp.cpp Chapter13/swap_opera13_3.h Chapter13/swap_opera13_3.cpp Chapter12/allocator_learn.cpp Chapter12/allocator_learn.h STL_Learn/Priority_learn.h STL_Learn/Priority_learn.cpp
         C++11/functional_std/functional_test.h C++11/Suggest55/Pointer_implment.cpp
-        init_test.h after_global.h after_global.cpp   Chapter13/move_test.h  Chapter13/move_test.cpp)
+        init_test.h after_global.h after_global.cpp   Chapter13/move_test.h  Chapter13/move_test.cpp STL_Learn/std_functionLearn.h C++11/smart_ptr/recursive_shared_ptr.h Chapter12/My_Sp.h C++20/Chpter19/func_ptr.h C++20/Chpter19/call_back_learn.h C++20/Chpter19/functor_learn.h effective/rules_09.h effective/rules_08.h C++20/Chpter16/excp_test.h DeepCppObj/Chapter1/int_template.h effective/rules_41_template.h effective/rules_43_base_temp_typename.h Deep_OO/chapter_0.h Memory_leak/case1_notvirtual_dectr.h effective/rules_30_inline.h "Chapter11/unordered_(multi)map.h" YuanRon/M1.h STL_Learn/Two_queue_stack.h)
 
 

@@ -40,6 +40,8 @@ void setTest(){
             {"woc",10}, {"Austen",20},
     };
     string word;
+    auto va = word_count["woc"];
+    //exclude2.
     while( cin>>word ) {
         if(exclude.find(word) != exclude.end()){
             ++word_count[word];

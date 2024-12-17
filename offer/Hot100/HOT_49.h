@@ -128,6 +128,7 @@ public:
 
     vector<vector<string>> groupAnagrams_test (vector<string>& strs) {
 
+        /// 主动申明 Lambda表达式
         auto arrayHash = [ fn = hash<int>{} ] (const array<int , 26>& arr) -> size_t {
             return accumulate(arr.begin() , arr.end() , 0u , [&](::size_t acc , int num){
               return (acc << 1)^ fn(num);
@@ -141,7 +142,7 @@ public:
         for( const string& str : strs){
             array<int , 26> counts{};
             int length = str.size();
-            for(int i = 0 ; i<length ; ++i){
+            for(int i = 0 ; i<length ; ++i) {
                 counts[str[i] - 'a'] += 1;
             }
             mp[counts].emplace_back(str);       /// 拥有相同个数的字符串会被 放在hash表的同一个key中

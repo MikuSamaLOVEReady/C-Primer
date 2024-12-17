@@ -53,7 +53,7 @@ public:
         ++MCtor;
         //切断之前的指针连接
         str._len = 0;
-        str._data = NULL;   // FIXME：为什么非要设置为NULL
+        str._data = NULL;   // FIXME：为什么非要设置为NULL、保证一定全部转移了data控制权
     }
 
 

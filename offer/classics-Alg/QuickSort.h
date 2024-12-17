@@ -17,7 +17,7 @@ int partition(vector<int>& nums , int left , int right){
     while(left < right){
        //下面两个while的顺序是不能掉换的
        //从小到大排列
-        while(left < right && nums[right]> pivot ) right--;
+        while(left < right && nums[right]> pivot ) right--;     /// 注意 left < right!!
         nums[left] = nums[right];
         //找到一个比pivot小的数
         while(left < right && nums[left] < pivot) left++;
@@ -34,6 +34,34 @@ void QuickSort( vector<int>& nums , int start , int end){
     int pivot_pos = partition(nums , start , end);      /// 每次能够确定一个位置
     QuickSort(nums,start , pivot_pos-1);
     QuickSort(nums, pivot_pos+1 , end);
+}
+
+
+
+/// 由于每次都能归位一个元素
+/// \param k 目标index quick sort 从小到大排列。 第k大即 index = K - 1 【size-k 表示移动多少次可以指到第k大、 n-1-[n-k] 表示移动了多少次】
+int QuickSelect(vector<int>& nums , int l , int r , int k) {
+
+    if(l == r) return nums[l];
+    int partition = nums[l];
+    /// 保存原始区间、在递归处使用
+    int j = r;
+    int i = l;
+
+    while( l < r) {
+        while( l < r && nums[r] >= partition ) r--;  /// 从右侧开始 *** 注意 l<r 限制条件
+        nums[l] = nums[r];
+        while( l < r && nums[l] < partition) l++;
+        nums[r] = nums[l];
+    }
+    nums[l] = partition;
+
+    /// 停止时 index=l=r  如果< N-K 则结果会在右侧 并且自身已经不在范围内
+    if( l < k ){
+        return QuickSelect(nums, l+1 , j , k);
+    }else{
+        return QuickSelect(nums, i , l , k);
+    }
 }
 
 

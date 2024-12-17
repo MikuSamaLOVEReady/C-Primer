@@ -6,6 +6,7 @@
 #define CHAPTER7_DATA_H
 #include <string>
 #include <vector>
+#include <iostream>
 using namespace std;
 struct Data{
     int ival;
@@ -44,6 +45,35 @@ public:
     static constexpr double rate = 6.4;
     static const int vecSize = 20;
     static vector<double> vec; //���ܸ�static �����ڳ�ʼ��
+    static const double va_2;   //类内的 static 可见性不止当前的编译单元
+//
+//    static void func_const_static() const{
+//
+//    }
+};
+
+static int share_va = 15;
+static const int share_constva = 1555;
+
+struct tes {
+    static int i;              // declares, but doesn't define S::i
+    inline static int x = 15;  // defines S::x ， 加上inline 变成定义
+};
+
+
+class this_ptrTest{
+public:
+
+    /// const func
+    void printANS() const {
+        std::cout << "ABA" << std::endl;
+    }
+
+    /// 从
+    void printANS_noConst() {
+        std::cout << "ABA" << std::endl;
+    }
+
 };
 
 
